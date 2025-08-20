@@ -1,0 +1,243 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities {
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:focus,
+:active {
+    outline: none;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+@font-face {
+    font-family: 'SF-Pro';
+    src: url('./fonts/SF-Pro-Display-Medium.otf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF-Light';
+    src: url('./fonts/SF-Pro-Display-Light.otf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    font-family: 'SF-Pro';
+    font-weight: 400;
+    display: flex;
+    flex-direction: row;
+}
+
+.hoverBtn {
+    @apply py-[5px] pl-[5px] rounded-md hover:bg-gray-200;
+}
+
+.fontLight {
+    font-family: 'SF-Light';
+    font-weight: 400;
+}
+
+.range {
+    -webkit-appearance: none;
+    appearance: none;
+    background: gray;
+    height: 5px;
+    border-radius: 5px;
+}
+
+.range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 12px;
+    width: 12px;
+    background: #ff4747;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+.gray{
+    background-color: rgb(204, 203, 203);
+}
+.card{
+    @apply bg-[#F5F5F5] flex flex-col gap-[10px] pb-[10px] max-w-[300px] relative overflow-hidden rounded-[20px] flex-shrink-0 text-center w-[90%] md:w-[45%] lg:w-[30%] xl:w-[300px];
+
+}
+.cardArtists{
+    @apply flex flex-col justify-center items-center gap-[10px] flex-shrink-0 text-center  w-[90%] md:w-[45%] lg:w-[30%] xl:w-[300px];
+}
+
+.imageArtist{
+    @apply w-[300px] rounded-[50%];
+}
+
+.scrollbar-hide::-webkit-scrollbar{
+    display: none;
+}
+.card .play-button, .openBtn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    background-color: #e3342f;
+    border: none;
+    color: white;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    pointer-events: auto;
+}
+
+.card:hover .overlay,
+.card:hover .play-button
+.card:hover .openBtn{
+    opacity: 1;
+    pointer-events: auto;
+}
+#searchInfo::-webkit-scrollbar-button{
+    display: none;
+}
+#searchInfo::-webkit-scrollbar-thumb{
+    width: 4px;
+    background: gray;
+    border-radius: 3px;
+}
+#searchInfo::-webkit-scrollbar{
+    width: 4px;
+    background: transparent;
+}
+.searchResultCard{
+    @apply flex flex-row justify-center gap-[10px] items-center py-[5px] w-full bg-colorBack2 rounded-lg shadow-lg max-h-[100px] px-[15px];
+}
+.searchResultCard:hover{
+    @apply cursor-pointer bg-colorBack2Hover;
+}
+.searchResultCardImage{
+    @apply w-[50px] rounded-md;
+}
+.imageAlbum{
+    @apply w-[270px] h-[270px] flex-shrink-0 rounded-lg object-cover;
+    box-shadow: 0px 10px 18px -5px rgba(0,0,0,0.75);
+}
+.card .overlay {
+    position: absolute;
+    top:0;
+    right:0;
+    bottom:48px;
+    left:0;
+    background-color: rgba(128, 128, 128, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+.trackAlbum{
+    @apply bg-colorBack2 flex items-center  w-full pr-[28px] rounded-md p-[1em];
+}
+
+.btnToPlay{
+    @apply text-[20px] text-red-700;
+}
+
+
