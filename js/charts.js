@@ -45,31 +45,39 @@ function createCards(container, items, type) {
 
         div.innerHTML = type === 'artists' ? `
             <img class="imageArtist" src="${cover}" alt="Cover">
-            <div class="p-[10px]">
-                <p class="author text-[18px] text-black">${authorName}</p>
+            <div>
+                <p class="author text-[16px] text-black line-clamp-1">${authorName}</p>
             </div>
         ` : type === 'tracks' ? `
             <div class="overlay"></div>
             <button class="play-button">▶</button>
             <img class="w-full object-cover" src="${cover}" alt="Cover">
             <audio src="${audioSrc}"></audio>
-            <div class="p-[10px]">
-                <p class="title text-[12px] font-[600]">${title}</p>
-                <p class="author text-[10px] text-gray-400">${authorName}</p>
+            <div>
+                <p class="title line-clamp-1">${title}</p>
+                <p class="author text-gray-400 line-clamp-1">${authorName}</p>
             </div>
         ` : type === 'albums' ? `
             <div class="overlay"></div>
-            <button class="openBtn">↗️</button>
+            <button class="openBtn">▶</button>
             <img class="w-full object-cover" src="${cover}" alt="Cover">
-            <div class="p-[10px]">
-                <p class="title text-[12px] font-[600]">${title}</p>
-                <p class="author text-[10px] text-gray-400">${authorName}</p>
+            <div>
+                <p class="title line-clamp-1">${title}</p>
+                <p class="author text-gray-400 line-clamp-1">${authorName}</p>
             </div>
-        ` : `
+        ` :type === 'podcasts' ? `
+        <div class="overlay"></div>
+            <button class="openBtn">▶</button>
             <img class="w-full object-cover" src="${cover}" alt="Cover">
-            <div class="p-[10px]">
-                <p class="title text-[12px] font-[600]">${title}</p>
-                <p class="author text-[10px] text-gray-400">${authorName}</p>
+            <div>
+                <p class="title line-clamp-1">${title}</p>
+                <p class="author text-gray-400 line-clamp-1">Apple Music</p>
+            </div>
+        ` :`
+            <img class="w-full object-cover" src="${cover}" alt="Cover">
+            <div>
+                <p class="title line-clamp-1">${title}</p>
+                <p class="author text-gray-400 line-clamp-1">${authorName}</p>
             </div>
         `;
         container.appendChild(div);

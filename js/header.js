@@ -40,11 +40,10 @@ function updateHeader(title, authorName, cover) {
     author.textContent = authorName;
     imgHeader.src = cover;
 }
-let volumeValue
 volumeSlider.addEventListener('input', () => {
-    volumeValue = volumeSlider.value;
+    player.volume = volumeSlider.value / 100;
     if (player.audio) {
-        player.audio.volume = volumeValue / 100;
+        player.audio.volume = player.volume;
     }
 });
 

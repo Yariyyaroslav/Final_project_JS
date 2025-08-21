@@ -191,7 +191,7 @@ body {
 }
 
 .card:hover .overlay,
-.card:hover .play-button
+.card:hover .play-button,
 .card:hover .openBtn{
     opacity: 1;
     pointer-events: auto;
