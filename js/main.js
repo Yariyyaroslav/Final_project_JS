@@ -1,3 +1,8 @@
+document.addEventListener('DOMContentLoaded', () => {
+    player.volume = JSON.parse(localStorage.getItem('volume'));
+    volumeSlider.value = player.volume*100;
+})
+
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('play-button')) {
         const card = e.target.closest('.card');
@@ -27,3 +32,6 @@ document.addEventListener('click', (e)=>{
     }
 })
 
+document.addEventListener('click', (e) => {
+    console.log(e.target)
+})

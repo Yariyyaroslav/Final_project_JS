@@ -5,6 +5,9 @@ const volumeSlider = document.getElementById('range');
 let track = document.querySelector('.track');
 let author = document.querySelector('.author');
 let imgHeader = document.querySelector('.imgHeader');
+const playRand = document.getElementById('playRandom');
+const timeTrack = document.getElementById('timeTrack');
+
 
 
 function updateHeaderIcon(isPlaying) {
@@ -24,6 +27,13 @@ function updateHeaderIcon(isPlaying) {
     }
 }
 
+playRand.addEventListener('click', async () => {
+    const trackData = await getRandomTrack();
+    const audio = new Audio(trackData.preview);
+    playTrack("header", audio, null, trackData.title, trackData.artist.name, trackData.album.cover_medium);
+} );
+
+
 buttonHeaderPlay.addEventListener('click', async () => {
     if (!player.audio) {
         const trackData = await getRandomTrack();
@@ -40,15 +50,18 @@ function updateHeader(title, authorName, cover) {
     author.textContent = authorName;
     imgHeader.src = cover;
 }
+
 volumeSlider.addEventListener('input', () => {
     player.volume = volumeSlider.value / 100;
+    localStorage.setItem('volume', volumeSlider.value/100);
     if (player.audio) {
         player.audio.volume = player.volume;
     }
 });
 
-prevButton.addEventListener('click', previousTrack)
 nextButton.addEventListener('click', nextTrack);
+prevButton.addEventListener('click', previousTrack)
+
 
 async function getRandomTrack() {
     let alphabet = 'abcdefghijklmnopqrstuvwxyz'

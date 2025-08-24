@@ -5,12 +5,15 @@ const player = {
     title: null,
     authorName: null,
     cover: null,
-    volume: 1,
+    volume: 0.5,
 };
+
 
 function playTrack(type, audio, button, title, authorName, cover) {
     if (player.audio && player.audio !== audio) {
         player.audio.pause();
+        player.audio.removeEventListener('ended', trackEnd);
+        player.audio.removeEventListener('timeupdate', timeTrackValue);
         if (player.currentButtonCard) {
             player.currentButtonCard.textContent = '▶';
         }
@@ -24,6 +27,18 @@ function playTrack(type, audio, button, title, authorName, cover) {
     player.title = title;
     player.authorName = authorName;
     player.cover = cover;
+
+    function trackEnd() {
+        console.log("end");
+        nextTrack();
+    }
+    function timeTrackValue() {
+        const progress = player.audio.currentTime / player.audio.duration;
+        const containerWidth = document.querySelector('.progressContainer').offsetWidth;
+        timeTrack.style.width = (progress * containerWidth) + 'px';
+    }
+    player.audio.addEventListener('ended', trackEnd);
+    player.audio.addEventListener('timeupdate', timeTrackValue);
 
     if (audio.paused) {
         audio.play();
@@ -67,7 +82,6 @@ function playTrack(type, audio, button, title, authorName, cover) {
         }
     }
 }
-
 
 async function nextTrack() {
     if (player.currentButtonCard) {

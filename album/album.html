@@ -150,7 +150,7 @@
         <header class="h-[65px] border-b-[1px] border-solid border-gray-400 w-full">
             <nav class="flex w-full h-full justify-evenly px-[30px] gap-[20px] items-center">
                 <div class="flex gap-[10px] items-center">
-                    <button>
+                    <button id="playRandom">
                         <svg class="text-gray-400" width="16" height="16" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="16 3 21 3 21 8"></polyline>
@@ -192,10 +192,14 @@
                 </div>
                 <div class="flex max-w-[500px] flex-1">
                     <img src="" class="min-w-[44px] h-[44px] bg-gray-300 imgHeader" alt="">
-
-                    <div class="flex flex-col max-w-[450px] w-full items-center justify-center gap-[3px] bg-gray-100">
-                        <span class="text-[16px] track">Song Name</span>
-                        <span class="text-[14px] fontLight author">Artist</span>
+                    <div class="flex flex-col max-w-[450px] w-full bg-gray-100">
+                        <div class="flex flex-1 flex-col justify-center items-center gap-[3px]">
+                            <span class="text-[16px] track">Song Name</span>
+                            <span class="text-[14px] fontLight author">Artist</span>
+                        </div>
+                        <div class="progressContainer w-full h-[3px] bg-gray-300">
+                            <div id="timeTrack" class="h-full w-0 bg-red-500"></div>
+                        </div>
                     </div>
                 </div>
                 <div class="flex gap-[10px] items-center justify-center">
