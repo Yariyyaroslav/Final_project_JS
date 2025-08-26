@@ -30,6 +30,11 @@ function createCards(container, items, type) {
             div.dataset.tracklist = item.tracklist;
             div.dataset.cover = item.cover_big;
         }
+        if (type === 'artists') {
+            div.dataset.artist = item.name;
+            div.dataset.picture = item.picture_big;
+            div.dataset.id = item.id;
+        }
         const title = type === 'artists' ? null : item.title;
         const authorName = type === 'artists' ? item.name
             : type === 'playlists' ? item.user.name

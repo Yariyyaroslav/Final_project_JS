@@ -35,3 +35,15 @@ document.addEventListener('click', (e)=>{
 document.addEventListener('click', (e) => {
     console.log(e.target)
 })
+
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('imageArtist')) {
+        const currentArtist = e.target.closest('.cardArtists');
+        const artistName = currentArtist.dataset.artist;
+        const cover = currentArtist.dataset.picture;
+        const id = currentArtist.dataset.id;
+        const artistData = {artistName, cover, id};
+        localStorage.setItem('currentArtist', JSON.stringify(artistData));
+        window.location.href = '../Artist/artist.html'
+    }
+})

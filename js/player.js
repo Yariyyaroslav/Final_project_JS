@@ -2,6 +2,7 @@ const player = {
     audio: null,
     currentButtonCard: null,
     currentButtonAlbum: null,
+    currentButtonArtist: null,
     title: null,
     authorName: null,
     cover: null,
@@ -20,6 +21,9 @@ function playTrack(type, audio, button, title, authorName, cover) {
         if (player.currentButtonAlbum) {
             player.currentButtonAlbum.textContent = '▶';
         }
+        if (player.currentButtonArtist) {
+            player.currentButtonArtist.textContent = '▶';
+        }
         updateHeaderIcon(false);
     }
     audio.volume = player.volume;
@@ -29,7 +33,6 @@ function playTrack(type, audio, button, title, authorName, cover) {
     player.cover = cover;
 
     function trackEnd() {
-        console.log("end");
         nextTrack();
     }
     function timeTrackValue() {
@@ -53,12 +56,18 @@ function playTrack(type, audio, button, title, authorName, cover) {
         if (type === "album") {
             player.currentButtonAlbum = button;
         }
+        if (type === "artist") {
+            player.currentButtonArtist = button;
+        }
         if (type === "header") {
             if (player.currentButtonCard) {
                 player.currentButtonCard.textContent = '⏸';
             }
             if (player.currentButtonAlbum) {
                 player.currentButtonAlbum.textContent = '⏸';
+            }
+            if (player.currentButtonArtist) {
+                player.currentButtonArtist.textContent = '⏸';
             }
         } else {
             updateHeaderIcon(true);
@@ -76,6 +85,9 @@ function playTrack(type, audio, button, title, authorName, cover) {
             }
             if (player.currentButtonAlbum) {
                 player.currentButtonAlbum.textContent = '▶';
+            }
+            if (player.currentButtonArtist) {
+                player.currentButtonArtist.textContent = '▶';
             }
         } else {
             updateHeaderIcon(false);
@@ -104,7 +116,25 @@ async function nextTrack() {
             const audio = nextTrack.querySelector('audio');
             const title = nextTrack.querySelector('h4').innerText;
             playTrack('album', audio, nextTrack.querySelector('.btnToPlay'), title, player.authorName, player.cover);
-        } else {
+        } else if(player.currentButtonArtist) {
+        const currentTrack = player.currentButtonArtist.closest('.trackArtist');
+        const currentGrid = currentTrack.closest('.gridSongs');
+        const allGrids = [...document.querySelectorAll('.gridSongs')];
+        const currentGridIndex = allGrids.indexOf(currentGrid);
+        let nextTrack = currentTrack.nextElementSibling;
+        if (!nextTrack) {
+            let nextGrid = allGrids[currentGridIndex + 1];
+            if (!nextGrid) {
+                nextGrid = allGrids[0];
+            }
+            nextTrack = nextGrid.querySelector('.trackArtist');
+        }
+        const audio = nextTrack.querySelector('audio');
+        const title = nextTrack.querySelector('.title').innerText;
+        const cover = nextTrack.querySelector('.cover').src;
+        console.log(cover)
+        playTrack('artist', audio, nextTrack.querySelector('.playButtonTrackArtist'), title, player.authorName, cover)
+    } else {
             const trackData = await getRandomTrack();
             const audio = new Audio(trackData.preview);
             playTrack('header', audio, null, trackData.title, trackData.artist.name, trackData.album.cover_medium)
