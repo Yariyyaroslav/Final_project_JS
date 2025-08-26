@@ -24,15 +24,6 @@ async function albumInfo({ artistName, albumName, cover, albumTrackList }) {
        </div>`).join('');
 }
 
-document.addEventListener('click', (e) => {
-    if (e.target.classList.contains('btnToPlay')) {
-        const trackElement = e.target.closest('.trackAlbum');
-        const audio = trackElement.querySelector('audio');
-        const buttonAlbum = e.target;
-        const title = trackElement.querySelector('h4').innerText;
-        playTrack("album", audio, buttonAlbum, title, artist, coverAlbum);
-    }
-});
 
 if (albumData) {
     albumInfo(albumData);

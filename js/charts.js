@@ -23,7 +23,7 @@ function createCards(container, items, type) {
     items.forEach(item => {
         const div = document.createElement('div');
         div.classList.add(type === 'artists' ? 'cardArtists' : 'card');
-        div.classList.add(type === 'albums'? 'album': null);
+        div.classList.add(type === 'albums'? 'album': type === 'playlists' ? 'album' : null);
         if (type === 'albums') {
             div.dataset.artist = item.artist.name;
             div.dataset.title = item.title;
@@ -34,6 +34,12 @@ function createCards(container, items, type) {
             div.dataset.artist = item.name;
             div.dataset.picture = item.picture_big;
             div.dataset.id = item.id;
+        }
+        if (type === 'playlists') {
+            div.dataset.artist = item.user.name;
+            div.dataset.title = item.title;
+            div.dataset.tracklist = item.tracklist;
+            div.dataset.cover = item.picture_medium;
         }
         const title = type === 'artists' ? null : item.title;
         const authorName = type === 'artists' ? item.name
@@ -78,13 +84,20 @@ function createCards(container, items, type) {
                 <p class="title line-clamp-1">${title}</p>
                 <p class="author text-gray-400 line-clamp-1">Apple Music</p>
             </div>
-        ` :`
+        ` :type === 'playlists' ? `
+            <div class="overlay"></div>
+            <button class="openBtn-playlist">▶</button>
             <img class="w-full object-cover" src="${cover}" alt="Cover">
             <div>
                 <p class="title line-clamp-1">${title}</p>
                 <p class="author text-gray-400 line-clamp-1">${authorName}</p>
             </div>
-        `;
+        `:`
+            <img class="w-full object-cover" src="${cover}" alt="Cover">
+            <div>
+                <p class="title line-clamp-1">${title}</p>
+                <p class="author text-gray-400 line-clamp-1">${authorName}</p>
+            </div>`;
         container.appendChild(div);
     });
 }

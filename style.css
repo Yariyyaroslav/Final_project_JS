@@ -105,14 +105,14 @@ h6 {
 
 @font-face {
     font-family: 'SF-Pro';
-    src: url('./fonts/SF-Pro-Display-Medium.otf');
+    src: url('dist/fonts/SF-Pro-Display-Medium.otf');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'SF-Light';
-    src: url('./fonts/SF-Pro-Display-Light.otf');
+    src: url('dist/fonts/SF-Pro-Display-Light.otf');
     font-weight: 400;
     font-style: normal;
 }
@@ -162,6 +162,7 @@ body {
     @apply bg-[#F5F5F5] flex flex-col gap-[10px] pb-[10px] max-w-[300px] relative overflow-hidden rounded-[20px] flex-shrink-0 text-center w-[90%] md:w-[45%] lg:w-[30%] xl:w-[300px];
 
 }
+
 .cardArtists{
     @apply flex flex-col justify-center items-center gap-[10px] flex-shrink-0 text-center  w-[90%] md:w-[45%] lg:w-[30%] xl:w-[300px];
 }
@@ -174,9 +175,10 @@ body {
 .scrollbar-hide::-webkit-scrollbar{
     display: none;
 }
-.card .play-button, .openBtn {
+
+.card .play-button, .openBtn, .openBtn-playlist {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
@@ -198,6 +200,14 @@ body {
 .card:hover .overlay,
 .card:hover .play-button,
 .card:hover .openBtn{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+.album:hover .overlay,
+.album:hover .openBtn,
+.card:hover .openBtn-playlist{
     opacity: 1;
     pointer-events: auto;
 }
@@ -271,7 +281,18 @@ body {
     position: absolute;
     top:0;
     right:0;
-    bottom:48px;
+    bottom:48px !important;
+    left:0;
+    background-color: rgba(128, 128, 128, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+.album .overlay{
+    position: absolute;
+    top:0;
+    right:0;
+    bottom:55px;
     left:0;
     background-color: rgba(128, 128, 128, 0.5);
     opacity: 0;
@@ -333,4 +354,39 @@ body {
     transition: opacity 0.3s ease;
     pointer-events: none;
     border-radius: 8px;
+}
+.allTrackList{
+    padding: 8px 8px 8px 12px !important;
+
+}
+
+.allTracks button{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+}
+
+
+.allTracks:hover button{
+    animation: buttonAnim .2s ease-in-out forwards;
+}
+
+
+@keyframes buttonAnim {
+    0%{
+        left: -20%;
+    opacity: 0;
+    } 25%{
+    left: -15%;
+    opacity: 0.25;
+          }50%{
+    left: -10%;
+    opacity: 0.5;
+                     } 75%{
+    left: -5%;
+    opacity: 0.75;
+                                            }100%{
+    left: 0;
+    opacity: 1;
+                                                                                         }
 }

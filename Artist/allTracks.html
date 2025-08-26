@@ -208,60 +208,23 @@
             </div>
         </nav>
     </header>
-    <main class="flex flex-col gap-[30px] items-center max-h-[calc(100vh-65px)] overflow-y-scroll">
-            <div class="h-[450px] w-full flex flex-col justify-between items-center flex-shrink-0 p-[20px] bg-colorArtistBack">
-                <img class="artistImg rounded-full max-w-[200px] mt-[80px]" src="" alt="artistImg">
-                <div id="artistName" class="self-start text-[26px] font-[600]"></div>
-            </div>
-        <div class="flex flex-col items-center gap-[20px] max-w-[1321px] w-full">
-            <div id="allTracksButton" class="allTracks cursor-pointer relative flex self-start gap-[10px] w-fit items-center justify-center">
-                <span class="text-[24px] font-[600]">All Tracks</span>
-                <div class="relative w-[24px]">
-                    <button>
-                    <svg class="feather feather-chevron-right" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"/></svg>
-                </button>
-                </div>
+    <main class="flex flex-col gap-[30px] items-center max-h-[calc(100vh-65px)] overflow-y-scroll p-[40px]">
+        <div class="flex flex-col gap-[20px] max-w-[1321px] w-full">
+            <h1 class="text-[32px] font-[600] self-start">All Tracks</h1>
+            <div id="trackList" class="flex flex-col gap-[10px] w-full">
 
             </div>
-        <div class="flex items-center justify-between gap-[18px] w-full max-w-[1225px]" id="songsScroll">
-            <button class="scroll-btn" data-dir="left">◀</button>
-            <div class="scroll-container-artist scrollbar-hide flex flex-row gap-[20px] overflow-x-auto w-full">
-
-            </div>
-            <button class="scroll-btn" data-dir="right">▶</button>
         </div>
-        </div>
-        <div class="flex flex-col gap-[20px]">
-            <span class="text-[24px] font-[600] self-start">Albums</span>
-            <div class="flex items-center justify-between gap-[18px] w-full max-w-[1321px]" id="albumsScroll">
-                <button class="scroll-btn" data-dir="left">◀</button>
-                <div class="scroll-container-albums-artist scrollbar-hide flex flex-row gap-[20px] overflow-x-auto w-full">
-
-                </div>
-                <button class="scroll-btn" data-dir="right">▶</button>
-            </div>
-        </div>
-        <div class="flex flex-col gap-[20px]">
-            <span class="text-[24px] font-[600] self-start">You may also like</span>
-            <div class="flex items-center justify-between gap-[18px] w-full max-w-[1321px]" id="artistsScroll">
-                <button class="scroll-btn" data-dir="left">◀</button>
-                <div class="scroll-container-artists-artist scrollbar-hide flex flex-row gap-[20px] overflow-x-auto w-full">
-
-                </div>
-                <button class="scroll-btn" data-dir="right">▶</button>
-            </div>
-        </div>
-        <footer>
-            <div>footer</div>
-        </footer>
     </main>
 </div>
+<footer>
 
+</footer>
 
 <script src="../js/api.js"></script>
 <script src="../js/player.js"></script>
 <script src="../js/header.js"></script>
-<script src="../js/artistCrearte.js"></script>
+<script src="../js/allTracks.js"></script>
 <script src="../js/search.js"></script>
 <script src="../js/main.js"></script>
 </body>

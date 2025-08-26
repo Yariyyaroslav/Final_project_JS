@@ -47,7 +47,7 @@ function playTrack(type, audio, button, title, authorName, cover) {
         audio.play();
         updateHeaderIcon(true);
         updateHeader(title, authorName, cover);
-        if (type !== "header") {
+        if (type !== "header" && button) {
             button.textContent = '⏸';
         }
         if (type === "card") {
@@ -76,7 +76,7 @@ function playTrack(type, audio, button, title, authorName, cover) {
     } else {
         audio.pause();
         updateHeaderIcon(false);
-        if (type !== "header") {
+        if (type !== "header"&& button) {
             button.textContent = '▶';
         }
         if (type === "header") {
@@ -113,9 +113,13 @@ async function nextTrack() {
             if (!nextTrack) {
                 nextTrack = currentTrack.parentElement.firstElementChild;
             }
+        let cover
+        if (nextTrack.classList.contains('allTrackList')) {
+            cover = nextTrack.querySelector('.coverAlbum').src
+        }
             const audio = nextTrack.querySelector('audio');
             const title = nextTrack.querySelector('h4').innerText;
-            playTrack('album', audio, nextTrack.querySelector('.btnToPlay'), title, player.authorName, player.cover);
+            playTrack('album', audio, nextTrack.querySelector('.btnToPlay'), title, player.authorName, cover || player.cover);
         } else if(player.currentButtonArtist) {
         const currentTrack = player.currentButtonArtist.closest('.trackArtist');
         const currentGrid = currentTrack.closest('.gridSongs');
@@ -158,10 +162,34 @@ async function previousTrack() {
             if (!previousCard) {
                 previousCard = currentTrack.parentElement.lastElementChild;
             }
+            let cover
+            if (previousCard.classList.contains('allTrackList')) {
+                cover = previousCard.querySelector('.coverAlbum').src
+            }
             const audio = previousCard.querySelector('audio');
             const title = previousCard.querySelector('h4').innerText;
-            playTrack('album', audio, previousCard.querySelector('.btnToPlay'), title, player.authorName, player.cover)
-        } else {
+            playTrack('album', audio, previousCard.querySelector('.btnToPlay'), title, player.authorName, cover || player.cover)
+        } else if(player.currentButtonArtist) {
+            const currentTrack = player.currentButtonArtist.closest('.trackArtist');
+            const currentGrid = currentTrack.closest('.gridSongs');
+            const allGrids = [...document.querySelectorAll('.gridSongs')];
+            const currentGridIndex = allGrids.indexOf(currentGrid);
+            let prevTrack = currentTrack.previousElementSibling;
+
+            if (!prevTrack) {
+                let prevGrid = allGrids[currentGridIndex - 1];
+                if (!prevGrid) {
+                    prevGrid = allGrids[allGrids.length - 1];
+                }
+                const tracksInPrevGrid = prevGrid.querySelectorAll('.trackArtist');
+                prevTrack = tracksInPrevGrid[tracksInPrevGrid.length - 1];
+            }
+            const audio = prevTrack.querySelector('audio');
+            const title = prevTrack.querySelector('.title').innerText;
+            const cover = prevTrack.querySelector('.cover').src;
+            console.log(cover)
+            playTrack('artist', audio, prevTrack.querySelector('.playButtonTrackArtist'), title, player.authorName, cover)
+        }else {
             const trackData = await getRandomTrack();
             const audio = new Audio(trackData.preview);
             playTrack('header', audio, null, trackData.title, trackData.artist.name, trackData.album.cover_medium)

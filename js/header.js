@@ -28,6 +28,18 @@ function updateHeaderIcon(isPlaying) {
 }
 
 playRand.addEventListener('click', async () => {
+    if (player.currentButtonCard) {
+        player.currentButtonCard.textContent = '▶';
+        player.currentButtonCard = null;
+    }
+    if (player.currentButtonAlbum) {
+        player.currentButtonAlbum.textContent = '▶';
+        player.currentButtonAlbum = null;
+    }
+    if (player.currentButtonArtist) {
+        player.currentButtonArtist.textContent = '▶';
+        player.currentButtonArtist = null;
+    }
     const trackData = await getRandomTrack();
     const audio = new Audio(trackData.preview);
     playTrack("header", audio, null, trackData.title, trackData.artist.name, trackData.album.cover_medium);

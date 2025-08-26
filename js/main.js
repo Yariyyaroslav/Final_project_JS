@@ -17,15 +17,13 @@ document.addEventListener('click', (e) => {
 
 
 document.addEventListener('click', (e)=>{
-    if (e.target.classList.contains('openBtn')) {
+    if (e.target.classList.contains('openBtn')||e.target.classList.contains('openBtn-playlist')) {
         const currentAlbum = e.target.closest('.album');
         const artistName = currentAlbum.dataset.artist;
         const albumName = currentAlbum.dataset.title;
         const albumTrackList = currentAlbum.dataset.tracklist;
         const cover = currentAlbum.dataset.cover;
         const albumData = {albumName, artistName, albumTrackList, cover};
-        console.log(albumData);
-        console.log('clicked')
         localStorage.setItem('currentAlbum', JSON.stringify(albumData));
         console.log('clicked')
         window.location.href = '../album/album.html'
@@ -47,3 +45,20 @@ document.addEventListener('click', (e) => {
         window.location.href = '../Artist/artist.html'
     }
 })
+
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('btnToPlay')) {
+        const trackElement = e.target.closest('.trackAlbum');
+        const audio = trackElement.querySelector('audio');
+        const buttonAlbum = e.target;
+        let cover
+        if (trackElement.classList.contains('allTrackList')) {
+        cover = trackElement.querySelector('.coverAlbum').src
+        }
+        const title = trackElement.querySelector('h4').innerText;
+        playTrack("album", audio, buttonAlbum, title, artist, cover || coverAlbum);
+    }
+});
+
+
+//https://cors-anywhere.herokuapp.com/corsdemo
