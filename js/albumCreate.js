@@ -5,6 +5,11 @@ const playRandAlbum = document.getElementById('playRand');
 let artist = '';
 let coverAlbum = '';
 let albumTrackData
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    checkPlaying()
+})
 async function albumInfo({ artistName, albumName, cover, albumTrackList }) {
     artist = artistName;
     coverAlbum = cover;
@@ -46,3 +51,8 @@ playRandAlbum.addEventListener('click', (e) => {
         }
     }
 })
+document.addEventListener('DOMContentLoaded', () => {
+    if (getCookie("signUp")) {
+        regBtn.innerHTML = `${getCookie("firstname")} ${getCookie("lastname")}`;
+    }
+});

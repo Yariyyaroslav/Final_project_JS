@@ -4,14 +4,17 @@ const player = {
     currentButtonAlbum: null,
     currentButtonArtist: null,
     title: null,
+    type: null,
     authorName: null,
     cover: null,
     volume: 0.5,
 };
 
 
+
 function playTrack(type, audio, button, title, authorName, cover) {
     if (player.audio && player.audio !== audio) {
+        setCookie('musicIsPlaying', false);
         player.audio.pause();
         player.audio.removeEventListener('ended', trackEnd);
         player.audio.removeEventListener('timeupdate', timeTrackValue);
@@ -26,6 +29,8 @@ function playTrack(type, audio, button, title, authorName, cover) {
         }
         updateHeaderIcon(false);
     }
+
+    player.type = type;
     audio.volume = player.volume;
     player.audio = audio;
     player.title = title;
@@ -44,6 +49,8 @@ function playTrack(type, audio, button, title, authorName, cover) {
     player.audio.addEventListener('timeupdate', timeTrackValue);
 
     if (audio.paused) {
+        setCookie('musicIsPlaying', true);
+        setPlayingMusic(player)
         audio.play();
         updateHeaderIcon(true);
         updateHeader(title, authorName, cover);
@@ -75,6 +82,7 @@ function playTrack(type, audio, button, title, authorName, cover) {
 
     } else {
         audio.pause();
+        setCookie('musicIsPlaying', false);
         updateHeaderIcon(false);
         if (type !== "header"&& button) {
             button.textContent = '▶';
@@ -93,6 +101,9 @@ function playTrack(type, audio, button, title, authorName, cover) {
             updateHeaderIcon(false);
         }
     }
+    setInterval(() => {
+        setCookie('currentTime', player.audio.currentTime);
+    })
 }
 
 async function nextTrack() {

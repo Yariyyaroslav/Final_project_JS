@@ -12,7 +12,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     });
 });
-
+document.addEventListener('DOMContentLoaded', () => {
+    checkPlaying()
+})
 function scrollContainer(container, dir) {
     const card = container.querySelector('.card, .cardArtists');
     const distance = card ? card.offsetWidth + 16 : 320;

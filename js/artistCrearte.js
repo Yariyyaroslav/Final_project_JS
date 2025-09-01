@@ -12,7 +12,9 @@ let artist = '';
 let artistTrackList
 let albumList
 let artistList
-
+document.addEventListener('DOMContentLoaded', () => {
+    checkPlaying()
+})
 allTracksButton.addEventListener('click', () => {
     localStorage.setItem("trackListCurrentArtist", JSON.stringify(artistTrackList));
     window.location.href = '../Artist/allTracks.html'
@@ -137,7 +139,11 @@ document.addEventListener('click', (e)=>{
     }
 })
 
-
+document.addEventListener('DOMContentLoaded', () => {
+    if (getCookie("signUp")) {
+        regBtn.innerHTML = `${getCookie("firstname")} ${getCookie("lastname")}`;
+    }
+});
 if(artistData){
     artistInfo(artistData);
     albumsInfo(artistData);

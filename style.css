@@ -388,5 +388,10 @@ body {
                                             }100%{
     left: 0;
     opacity: 1;
+
                                                                                          }
+}
+
+.active{
+    display: flex;
 }

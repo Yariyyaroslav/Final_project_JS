@@ -142,7 +142,7 @@
         <div class="border-t-[1px] border-solid border-gray-400 h-[60px] w-full flex items-center fontLight">
             <div class="flex gap-[8px] items-center ml-[10px] w-full">
                 <img class="max-w-[30px]" src="../src/icons/kindpng_2074624.png" alt="avatar">
-                <span>Name Surname</span>
+                <span id="regBtn">Name Surname</span>
             </div>
         </div>
     </aside>
@@ -209,8 +209,9 @@
             </nav>
         </header>
         <main
-            class="flex flex-col py-[32px] px-[30px] gap-[30px] justify-start items-center max-h-[calc(100vh-65px)] overflow-y-scroll">
-            <span class="text-[40px] font-[700] self-start">Home</span>
+            class="flex flex-col gap-[30px] justify-start items-center max-h-[calc(100vh-65px)] overflow-y-scroll">
+            <div class="flex flex-col py-[32px] px-[30px] gap-[30px] justify-start items-center w-full">
+                <span class="text-[40px] font-[700] self-start">Home</span>
 
             <div class="chart-section flex flex-col gap-[10px]" data-type="tracks">
                 <span class="text-[22px] font-[500] self-start">Charts Tracks</span>
@@ -246,19 +247,58 @@
                     <div class="scroll-container scrollbar-hide flex flex-row gap-[20px] overflow-x-auto w-full"></div>
                     <button class="scroll-btn" data-dir="right">▶</button>
                 </div>
-            </div>
+            </div></div>
+            <footer class="py-[40px] px-[30px] flex flex-col justify-start gap-[10px] items-start w-full bg-colorBack2 text-[#535353]">
+                <h4>Copyright 2025 <span>Apple Inc.</span> All rights reserved</h4>
+                <ul class="flex gap-[10px]">
+                    <li><a href="https://www.apple.com/legal/internet-services/">Terms of use of Internet services</a></li>
+                    <li><a href="https://www.apple.com/ru/legal/privacy/data/ru/apple-music/">Apple Music and privacy</a></li>
+                    <li><a href="https://support.apple.com/ru-ru/music">Help Desk</a></li>
+                    <li><a href="https://www.apple.com/feedback/apple-music.html">Feedback</a></li>
+                </ul>
+            </footer>
 
         </main>
     </div>
-    <footer>
+    <div id="regOverlay"
+         class="hidden fixed top-0 left-0 right-0 bottom-0 flex-col items-center justify-center bg-[#BBBBBB8E] z-[9999]">
+        <div class="bg-white rounded-3xl overflow-hidden shadow-xl p-10 w-full max-w-[285px] flex flex-col gap-[24px]">
+            <h1 class="text-3xl md:text-4xl font-bold text-red-500 text-center">Create Account</h1>
 
-    </footer>
-    <script src="../js/player.js"></script>
+            <div class="flex flex-col gap-4">
+                <input id="firstname" type="text" placeholder="First Name"
+                       class="px-[16px] py-[12px] rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-400 text-lg">
+                <input id="lastname" type="text" placeholder="Last Name"
+                       class="px-[16px] py-[12px] rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-400 text-lg">
+                <input id="email" type="email" placeholder="Email"
+                       class="px-[16px] py-[12px] rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-400 text-lg">
+                <input id="password" type="password" placeholder="Password"
+                       class="px-[16px] py-[12px] rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-400 text-lg">
+            </div>
+
+            <button id="signUp"
+                    class="bg-gradient-to-r from-red-500 to-red-700 hover:from-red-600 hover:to-red-800 text-white font-semibold py-3 rounded-xl text-lg transition-colors">
+                Sign Up
+            </button>
+
+            <p class="text-center text-gray-500 text-sm md:text-base">
+                Already have an account?
+                <a href="#" class="text-red-500 font-[10px] hover:underline">Log in</a>
+            </p>
+        </div>
+    </div>
+
+
+    </div>
     <script src="../js/api.js"></script>
-    <script src="../js/header.js"></script>
+    <script src="../js/cookies.js"></script>
     <script src="../js/charts.js"></script>
     <script src="../js/search.js"></script>
+    <script src="../js/player.js"></script>
+    <script src="../js/header.js"></script>
     <script src="../js/main.js"></script>
+
+
 </body>
 
 

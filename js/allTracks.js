@@ -2,8 +2,9 @@ let allTracks = JSON.parse(localStorage.getItem("trackListCurrentArtist"));
 const trackList = document.getElementById('trackList');
 console.log(allTracks)
 let artist = allTracks[0].artist.name;
-
-console.log()
+document.addEventListener('DOMContentLoaded', () => {
+    checkPlaying()
+})
 trackList.innerHTML = allTracks.map((track, index) =>
     `<div class="trackAlbum allTrackList flex gap-[15px] w-full">
                     <audio src="${track.preview}"></audio>
@@ -15,3 +16,8 @@ trackList.innerHTML = allTracks.map((track, index) =>
                 </div>`
 ).join('');
 
+document.addEventListener('DOMContentLoaded', () => {
+    if (getCookie("signUp")) {
+        regBtn.innerHTML = `${getCookie("firstname")} ${getCookie("lastname")}`;
+    }
+});

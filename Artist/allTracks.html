@@ -141,7 +141,7 @@
     <div class="border-t-[1px] border-solid border-gray-400 h-[60px] w-full flex items-center fontLight">
         <div class="flex gap-[8px] items-center ml-[10px] w-full">
             <img class="max-w-[30px]" src="../src/icons/kindpng_2074624.png" alt="avatar">
-            <span>Name Surname</span>
+            <span id="regBtn">Name Surname</span>
         </div>
     </div>
 </aside>
@@ -208,13 +208,24 @@
             </div>
         </nav>
     </header>
-    <main class="flex flex-col gap-[30px] items-center max-h-[calc(100vh-65px)] overflow-y-scroll p-[40px]">
-        <div class="flex flex-col gap-[20px] max-w-[1321px] w-full">
-            <h1 class="text-[32px] font-[600] self-start">All Tracks</h1>
-            <div id="trackList" class="flex flex-col gap-[10px] w-full">
+    <main class="flex flex-col gap-[30px] items-center max-h-[calc(100vh-65px)] overflow-y-scroll">
+        <div class="flex flex-col gap-[30px] items-center w-full p-[40px]">
+            <div class="flex flex-col gap-[20px] max-w-[1321px] w-full">
+                <h1 class="text-[32px] font-[600] self-start">All Tracks</h1>
+                <div id="trackList" class="flex flex-col gap-[10px] w-full">
 
+                </div>
             </div>
         </div>
+        <footer class="py-[40px] px-[30px] flex flex-col justify-start gap-[10px] items-start w-full bg-colorBack2 text-[#535353]">
+            <h4>Copyright 2025 <span>Apple Inc.</span> All rights reserved</h4>
+            <ul class="flex gap-[10px]">
+                <li><a href="https://www.apple.com/legal/internet-services/">Terms of use of Internet services</a></li>
+                <li><a href="https://www.apple.com/ru/legal/privacy/data/ru/apple-music/">Apple Music and privacy</a></li>
+                <li><a href="https://support.apple.com/ru-ru/music">Help Desk</a></li>
+                <li><a href="https://www.apple.com/feedback/apple-music.html">Feedback</a></li>
+            </ul>
+        </footer>
     </main>
 </div>
 <footer>
@@ -222,6 +233,7 @@
 </footer>
 
 <script src="../js/api.js"></script>
+<script src="../js/cookies.js"></script>
 <script src="../js/player.js"></script>
 <script src="../js/header.js"></script>
 <script src="../js/allTracks.js"></script>
