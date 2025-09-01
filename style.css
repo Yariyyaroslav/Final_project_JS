@@ -302,10 +302,17 @@ body {
 .trackAlbum{
     @apply bg-colorBack2 flex items-center  w-full pr-[28px] rounded-md p-[1em];
 }
+.trackPlaylist{
+    @apply bg-colorBack2 flex items-center  w-full pr-[28px] rounded-md p-[1em];
+}
 
 .btnToPlay{
     @apply text-[20px] text-red-700;
 }
+.btnToPlayPlayList{
+    @apply text-[20px] text-red-700;
+}
+
 
 #playRandom>svg:hover{
     color: #e3342f;

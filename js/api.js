@@ -8,10 +8,17 @@ async function sendRequest(method, url, body = null) {
         options.body = JSON.stringify(body);
         options.headers = { 'Content-Type': 'application/json' };
     }
-    const response = await fetch(url, options);
-    if (!response.ok) {
-        const err = await response.json();
-        throw new Error(err.message || 'Error');
+    try{
+        const response = await fetch(url, {method});
+        if(response.ok){
+            return await response.json()
+        }else{
+            const err = await response.json()
+            const e = new Error(err.message)
+            e.name = err.name
+            throw e
+        }
+    }catch (e){
+        throw e;
     }
-    return response.json();
 }

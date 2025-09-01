@@ -211,7 +211,7 @@
         </header>
         <main class="flex flex-col gap-[30px] justify-start items-center max-h-[calc(100vh-65px)] overflow-y-scroll">
             <div class="flex flex-col gap-[30px] justify-start items-center p-[40px] w-full">
-                <div id="album" class="flex w-full h-[270px] gap-[30px]">
+                <div id="album" class="flex w-full h-[270px] gap-[30px] albumInfo">
                     <img class="imageAlbum" src="../src/bea3491915571d34a026753f4a872000.jpg" alt="">
                     <div class="flex flex-col justify-between h-full flex-1 max-h-[80%] self-end">
                         <div class="flex flex-col gap-[10px]">
@@ -239,9 +239,34 @@
             </footer>
         </main>
     </div>
-    <footer>
+    <div id="regOverlay"
+         class="hidden fixed top-0 left-0 right-0 bottom-0 flex-col items-center justify-center bg-[#BBBBBB8E] z-[9999]">
+        <div class="bg-white rounded-3xl overflow-hidden shadow-xl p-10 w-full max-w-[285px] flex flex-col gap-[24px]">
+            <h1 class="text-3xl md:text-4xl font-bold text-red-500 text-center">Create Account</h1>
 
-    </footer>
+            <div class="flex flex-col gap-4">
+                <input id="firstname" type="text" placeholder="First Name"
+                       class="px-[16px] py-[12px] rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-400 text-lg">
+                <input id="lastname" type="text" placeholder="Last Name"
+                       class="px-[16px] py-[12px] rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-400 text-lg">
+                <input id="email" type="email" placeholder="Email"
+                       class="px-[16px] py-[12px] rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-400 text-lg">
+                <input id="password" type="password" placeholder="Password"
+                       class="px-[16px] py-[12px] rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-400 text-lg">
+            </div>
+
+            <button id="signUp"
+                    class="bg-gradient-to-r from-red-500 to-red-700 hover:from-red-600 hover:to-red-800 text-white font-semibold py-3 rounded-xl text-lg transition-colors">
+                Sign Up
+            </button>
+
+            <p class="text-center text-gray-500 text-sm md:text-base">
+                Already have an account?
+                <a href="#" class="text-red-500 font-[10px] hover:underline">Log in</a>
+            </p>
+        </div>
+    </div>
+
     <script src="../js/api.js"></script>
     <script src="../js/cookies.js"></script>
     <script src="../js/main.js"></script>

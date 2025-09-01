@@ -21,12 +21,16 @@ async function albumInfo({ artistName, albumName, cover, albumTrackList }) {
     albumTrackData = albumTracks.data;
 
     trackAlbumList.innerHTML = albumTrackData.map((track, index) => `
-       <div class="trackAlbum flex gap-[15px] w-full">
+       <div class="trackAlbum flex justify-between w-full">
+         <div class="flex gap-[15px] ">
          <audio src="${track.preview}"></audio>
          <button class="btnToPlay">▶</button>
          <span>${index+1}</span>
          <h4>${track.title}</h4>
+</div>
+         <img class="addToFavourite" src="../src/icons/favourite.svg" alt="favourite">
        </div>`).join('');
+    updateIcons()
 }
 
 
