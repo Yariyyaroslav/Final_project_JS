@@ -8,7 +8,7 @@ const songsScroll = document.getElementById('songsScroll');
 const albumsScroll = document.getElementById('albumsScroll');
 const artistsScroll = document.getElementById('artistsScroll');
 const allTracksButton = document.getElementById('allTracksButton');
-let artist = '';
+let artistArt = '';
 let artistTrackList
 let albumList
 let artistList
@@ -51,7 +51,7 @@ function scrollContainerArtist(container, dir, distance) {
 
 async function artistInfo({artistName, cover, id}) {
     const songUrl = `https://api.deezer.com/artist/${id}/top?limit=50`
-    artist = artistName
+    artistArt = artistName
     artistNameMain.innerText = artistName;
     artistImg.src = cover;
     const artistTracks = await sendRequest("GET", proxyUrl+songUrl);
@@ -65,7 +65,7 @@ async function albumsInfo({artistName, cover, id}){
     albumList = albums.data;
     albumContainer.innerHTML = albumList.map(album =>
         `<div class="album flex flex-col bg-colorArtistBack justify-between flex-shrink-0 w-[300px] rounded-lg overflow-hidden relative"
-            data-artist="${artist}"
+            data-artist="${artistArt}"
             data-title="${album.title}"
             data-trackList="${album.tracklist}"
             data-cover="${album.cover_big}">
@@ -120,10 +120,11 @@ function songChunk(data){
                             <span class="text-[12px] font-[400] albumName">${song.album.title}</span>
                         </div>
                     </div>
-                    <div>...</div>
+                    <img class="addToFavourite" src="../src/icons/favourite.svg" alt="favourite">
                 </div>`).join('');
         artistScroll.appendChild(grid);
     }
+    updateIcons()
 }
 
 
@@ -135,7 +136,7 @@ document.addEventListener('click', (e)=>{
         const title = currentTrack.querySelector('.title').textContent;
         const cover = currentTrack.querySelector('.cover').src;
         const buttonArtist = e.target;
-        playTrack("artist", audio, buttonArtist, title, artist, cover);
+        playTrack("artist", audio, buttonArtist, title, artistArt, cover);
     }
 })
 

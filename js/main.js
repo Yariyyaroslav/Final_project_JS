@@ -137,13 +137,14 @@ document.addEventListener('click', (e) => {
     if (e.target.classList.contains('addToFavourite')) {
         let favBtn = e.target
         let track = favBtn.closest('.trackAlbum');
+        let trackA = favBtn.closest('.trackArtist');
         const albumData = JSON.parse(localStorage.getItem('currentAlbum'));
         let trackData = {
-            title: track.querySelector('h4').innerText,
-            audio: track.querySelector('audio').src,
-            cover: albumData.cover,
-            albumName: albumData.albumName,
-            artistName: albumData.artistName,
+            title: track?.querySelector('h4')?.innerText || trackA?.querySelector('.title')?.innerText,
+            audio: track?.querySelector('audio')?.src || trackA?.querySelector('audio')?.src,
+            cover: track?.querySelector('.coverAlbum')?.src || trackA?.querySelector('.cover')?.src || albumData?.cover ,
+            albumName: albumData?.albumName || trackA?.querySelector('.albumName') || null,
+            artistName: track?.querySelector('.artistName')?.innerText || albumData?.artistName || artistArt || artist,
         }
         const exist = favouriteSongs.some(song => song.title === trackData.title);
     if (!exist) {
@@ -166,7 +167,8 @@ document.addEventListener('click', (e) => {
 function updateIcons(){
         document.querySelectorAll('.addToFavourite').forEach(favBtn => {
             const track = favBtn.closest('.trackAlbum');
-            const title = track.querySelector('h4').innerText;
+            const trackA = favBtn.closest('.trackArtist');
+            const title = track?.querySelector('h4')?.innerText || trackA?.querySelector('.title')?.innerText;
             const exist = favouriteSongs.some(song => song.title === title);
             if (exist) {
                 favBtn.src = '../src/icons/favouriteFilled.svg';

@@ -18,7 +18,7 @@ trackList.innerHTML = allTracks.map((track, index) =>
                     <img class="addToFavourite" src="../src/icons/favourite.svg" alt="favourite">
                 </div>`
 ).join('');
-
+updateIcons()
 document.addEventListener('DOMContentLoaded', () => {
     if (getCookie("signUp")) {
         regBtn.innerHTML = `${getCookie("firstname")} ${getCookie("lastname")}`;
