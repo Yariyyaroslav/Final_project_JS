@@ -1,3 +1,9 @@
+document.addEventListener('click', (e) => {
+    console.log(e.target)
+})
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     player.volume = JSON.parse(localStorage.getItem('volume'));
     volumeSlider.value = player.volume*100;
@@ -55,9 +61,7 @@ document.addEventListener('click', (e)=>{
     }
 })
 
-document.addEventListener('click', (e) => {
-    console.log(e.target)
-})
+
 
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('imageArtist')) {
@@ -80,14 +84,16 @@ document.addEventListener('click', (e) => {
         if (trackElement.classList.contains('allTrackList')) {
         cover = trackElement.querySelector('.coverAlbum').src
         }
+        let artistPlaylist = trackElement.querySelector('.artistPlaylist').innerText;
         const title = trackElement.querySelector('h4').innerText;
-        playTrack("album", audio, buttonAlbum, title, artist, cover || coverAlbum);
+        playTrack("album", audio, buttonAlbum, title, artistPlaylist || artist, cover || coverAlbum);
     }
 });
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('btnToPlayPlayList')) {
         const trackElement = e.target.closest('.trackPlaylist');
         const audio = trackElement.querySelector('audio');
+        console.log(audio);
         const buttonAlbum = e.target;
         let cover = trackElement.querySelector('.coverAlbum').src;
         let artistPlaylist = trackElement.querySelector('.artistPlaylist').innerText;

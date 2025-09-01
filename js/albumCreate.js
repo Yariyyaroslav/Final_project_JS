@@ -37,12 +37,15 @@ async function albumInfo({ artistName, albumName, cover, albumTrackList }) {
 if (albumData) {
     albumInfo(albumData);
 }
-
+let lastIndex = -1;
 playRandAlbum.addEventListener('click', (e) => {
     console.log(albumTrackData)
     let trackIndex;
     if (albumTrackData) {
-        trackIndex = Math.floor(Math.random() * albumTrackData.length);
+        do {
+            trackIndex = Math.floor(Math.random() * albumTrackData.length);
+        } while (trackIndex === lastIndex && albumTrackData.length > 1);
+        lastIndex = trackIndex;
         const track = albumTrackData[trackIndex];
         if (track) {
             const audio = new Audio(track.preview);
