@@ -11,7 +11,7 @@ function favouritePlaylistCreate(favouriteList) {
     console.log(favouritePlaylist)
     console.log(Array.isArray(favouriteList))
     trackListFavourite.innerHTML = favouritePlaylist.map((track, index) =>
-        `<div class="trackAlbum allTrackList flex justify-between items-center w-full">
+        `<div class="trackAlbum allTrackList trackPlaylist flex justify-between items-center w-full">
                     <div class="flex gap-[15px] items-center">
                     <audio src="${track.audio}"></audio>
                     <button class="btnToPlay">▶</button>

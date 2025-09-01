@@ -3,7 +3,6 @@ document.addEventListener('click', (e) => {
 })
 
 
-
 document.addEventListener('DOMContentLoaded', () => {
     player.volume = JSON.parse(localStorage.getItem('volume'));
     volumeSlider.value = player.volume*100;
@@ -61,8 +60,6 @@ document.addEventListener('click', (e)=>{
     }
 })
 
-
-
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('imageArtist')) {
         const currentArtist = e.target.closest('.cardArtists');
@@ -84,7 +81,10 @@ document.addEventListener('click', (e) => {
         if (trackElement.classList.contains('allTrackList')) {
         cover = trackElement.querySelector('.coverAlbum').src
         }
-        let artistPlaylist = trackElement.querySelector('.artistPlaylist').innerText;
+        let artistPlaylist
+        if(trackElement.classList.contains('trackPlaylist')) {
+            artistPlaylist = trackElement.querySelector('.artistPlaylist').innerText;
+        }
         const title = trackElement.querySelector('h4').innerText;
         playTrack("album", audio, buttonAlbum, title, artistPlaylist || artist, cover || coverAlbum);
     }

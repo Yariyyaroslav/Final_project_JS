@@ -22,7 +22,7 @@ async function albumInfo({ artistName, albumName, cover, albumTrackList }) {
 
     trackAlbumList.innerHTML = albumTrackData.map((track, index) => `
        <div class="trackAlbum flex justify-between w-full">
-         <div class="flex gap-[15px] ">
+         <div class="flex gap-[15px] items-center justify-center">
          <audio src="${track.preview}"></audio>
          <button class="btnToPlay">▶</button>
          <span>${index+1}</span>

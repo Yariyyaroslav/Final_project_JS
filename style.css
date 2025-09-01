@@ -363,7 +363,7 @@ body {
     border-radius: 8px;
 }
 .allTrackList{
-    padding: 8px 8px 8px 12px !important;
+    padding: 8px 15px 8px 12px !important;
 
 }
 
@@ -401,4 +401,11 @@ body {
 
 .active{
     display: flex;
+}
+
+#gridArtists{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 25px;
+    row-gap: 25px;
 }
