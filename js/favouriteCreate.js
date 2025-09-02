@@ -22,7 +22,7 @@ function favouritePlaylistCreate(favouriteList) {
                     </div>
                     
                     <div class="flex gap-[15px] items-center justify-center">
-                    <span class="artistPlaylist">${track.artistName}</span>
+                    <span class="artistPlaylist hidden sm:block">${track.artistName}</span>
                     <img class="addToFavourite" src="../src/icons/favourite.svg" alt="favourite">
                     </div>
                 </div>`

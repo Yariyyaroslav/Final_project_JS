@@ -105,14 +105,14 @@ h6 {
 
 @font-face {
     font-family: 'SF-Pro';
-    src: url('dist/fonts/SF-Pro-Display-Medium.otf');
+    src: url('../dist/fonts/SF-Pro-Display-Medium.otf');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'SF-Light';
-    src: url('dist/fonts/SF-Pro-Display-Light.otf');
+    src: url('../dist/fonts/SF-Pro-Display-Light.otf');
     font-weight: 400;
     font-style: normal;
 }
@@ -159,12 +159,12 @@ body {
     background-color: rgb(204, 203, 203);
 }
 .card{
-    @apply bg-[#F5F5F5] flex flex-col gap-[10px] pb-[10px] max-w-[300px] relative overflow-hidden rounded-[20px] flex-shrink-0 text-center w-[90%] md:w-[45%] lg:w-[30%] xl:w-[300px];
+    @apply bg-[#F5F5F5] flex flex-col gap-[10px] pb-[10px] max-w-[200px] md:max-w-[250px] 2xl:max-w-[300px] relative overflow-hidden rounded-[20px] flex-shrink-0 text-center w-full;
 
 }
 
 .cardArtists{
-    @apply flex flex-col justify-center items-center gap-[10px] flex-shrink-0 text-center  w-[90%] md:w-[45%] lg:w-[30%] xl:w-[300px];
+    @apply flex flex-col justify-center items-center max-w-[200px] md:max-w-[250px] 2xl:max-w-[300px] gap-[10px] flex-shrink-0 text-center w-full;
 }
 
 .imageArtist{
@@ -233,7 +233,7 @@ body {
     @apply w-[50px] rounded-md;
 }
 .imageAlbum{
-    @apply w-[270px] h-[270px] flex-shrink-0 rounded-lg object-cover;
+    @apply w-[240px] lg:w-[270px] h-[240px] lg:h-[270px] flex-shrink-0 rounded-lg object-cover;
     box-shadow: 0 10px 18px -5px rgba(0,0,0,0.75);
 }
 .searchImgButton{
@@ -319,7 +319,6 @@ body {
 }
 
 .gridSongs{
-    display: grid;
     column-gap: 7.5px;
     row-gap: 14px;
 }
@@ -398,6 +397,25 @@ body {
 
                                                                                          }
 }
+@keyframes asideAnimBack {
+    0%{
+        left: 0;
+        opacity: 1;
+    } 25%{
+              left: -5%;
+              opacity: 0.75;
+      }50%{
+           left: -10%;
+           opacity: 0.5;
+       } 75%{
+                              left: -15%;
+                              opacity: 0.25;
+         }100%{
+                                        left: -20%;
+                                        opacity: 0;
+
+          }
+}
 
 .active{
     display: flex;
@@ -405,11 +423,27 @@ body {
 
 #gridArtists{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     column-gap: 25px;
     row-gap: 25px;
+    @apply xs:grid-cols-2 lg:grid-cols-3;
 }
 
 .addToFavourite{
     z-index: 999;
+}
+
+.activeAside{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    animation: buttonAnim .2s ease-in-out forwards;
+}
+
+header{
+    z-index: 10000;
+}
+
+.track, .author{
+    @apply line-clamp-1;
 }

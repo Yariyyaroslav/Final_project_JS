@@ -1,253 +1,273 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apple Music</title>
-    <link rel="stylesheet" href="dist/output.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./dist/output.css">
+
 </head>
 
-<body class="flex h-screen">
-    
-    <aside
-        class="flex flex-col items-center h-screen border-r-[1px] border-solid border-gray-400 w-full max-w-[259px] ">
-        <div class="flex flex-col gap-[20px] w-full items-center flex-grow">
-            <div class="pt-[17px] pl-[32px] h-[55px] w-full">
-                <a href="#">
-                    <img class="max-w-[100px]" src="./src/icons/Apple Music Logo (PNG720p) - Vector69Com.png"
-                        alt="logo">
-                </a>
+<body class="min-w-[370px]">
+
+<aside
+        id="aside"
+        class="sm:flex flex-col items-center h-screen hidden border-r-[1px] border-solid border-gray-400 max-w-[240px] md:max-w-[259px] w-full z-[1] bg-white">
+    <div class="flex flex-col gap-[20px] w-full items-center flex-grow">
+        <div class="pt-[17px] pl-[32px] h-[55px] w-full">
+            <a href="#">
+                <img class="max-w-[100px]" src="./src/icons/Apple Music Logo (PNG720p) - Vector69Com.png"
+                     alt="logo">
+            </a>
+        </div>
+        <div
+                class="pl-[5px] gap-[5px] flex items-center h-[32px] w-full border-[1px] border-solid border-red-600 rounded-md max-w-[210px] relative">
+            <img class="w-[15px] h-[15px] " src="./src/icons/icons8-search-50.png" alt="">
+            <input class="bg-transparent w-full" id="searchMain" type="text" placeholder="Search">
+            <div id="searchInfo"
+                 class="absolute hidden flex-col gap-[5px] top-full p-[5px] left-0 mt-1 w-full max-h-[250px] overflow-y-auto bg-colorBack border border-red-600 rounded-md shadow-lg z-[9999]">
+
             </div>
-            <div
-                class="pl-[5px] gap-[5px] flex items-center  h-[32px] w-full border-[1px] border-solid border-red-600 rounded-md max-w-[210px]">
-                <img class="w-[15px] h-[15px] " src="./src/icons/icons8-search-50.png" alt="">
-                <input class="bg-transparent w-full" type="text" placeholder="Search">
-            </div>
-            <div class="max-w-[200px] w-full flex flex-col">
-                <a href="./Home/Home.html" class="flex gap-[10px] items-center hoverBtn">
+        </div>
+        <div class="max-w-[200px] w-full flex flex-col">
+            <a href="./Home/Home.html" class="flex gap-[10px] items-center hoverBtn ">
+                <svg class="text-red-600" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9L12 2L21 9V20a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                <span class="text-[17px]">Home</span>
+            </a>
+            <a href="" class="flex gap-[10px] items-center hoverBtn">
+                <svg class="text-red-600" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+                    <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+                    <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+                    <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+                    <rect x="14" y="14" width="7" height="7" rx="1"></rect>
+                </svg>
+                <span class="text-[17px]">New</span>
+            </a>
+            <a href="" class="flex gap-[10px] items-center hoverBtn">
+                <svg class="text-red-600" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M7 7a7 7 0 0 0 0 10"></path>
+                    <path d="M17 7a7 7 0 0 1 0 10"></path>
+                </svg>
+                <span class="text-[17px]">Radio</span>
+            </a>
+        </div>
+        <div class="max-w-[200px] w-full flex flex-col gap-[10px]">
+            <span class="text-[13px] text-gray-600">Library</span>
+            <div>
+                <a href="" class="flex gap-[10px] items-center hoverBtn">
                     <svg class="text-red-600" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M3 9L12 2L21 9V20a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"></path>
-                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
                     </svg>
-                    <span class="text-[17px]">Home</span>
+                    <span class="text-[17px]">Recently added</span>
+                </a>
+                <a href="./Library/artists.html" class="flex gap-[10px] items-center hoverBtn">
+                    <svg class="text-red-600" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 5L19 10"></path>
+                        <path d="M15 4a2.5 2.5 0 0 1 3.5 3.5L11 15l-4 1 1-4 7.5-7.5z"></path>
+                    </svg>
+                    <span class="text-[17px]">Artists</span>
                 </a>
                 <a href="" class="flex gap-[10px] items-center hoverBtn">
                     <svg class="text-red-600" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
-                        <rect x="3" y="3" width="7" height="7" rx="1"></rect>
-                        <rect x="14" y="3" width="7" height="7" rx="1"></rect>
-                        <rect x="3" y="14" width="7" height="7" rx="1"></rect>
-                        <rect x="14" y="14" width="7" height="7" rx="1"></rect>
-                    </svg>
-                    <span class="text-[17px]">New</span>
-                </a>
-                <a href="" class="flex gap-[10px] items-center hoverBtn">
-                    <svg class="text-red-600" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2"></rect>
                         <circle cx="12" cy="12" r="3"></circle>
-                        <path d="M7 7a7 7 0 0 0 0 10"></path>
-                        <path d="M17 7a7 7 0 0 1 0 10"></path>
                     </svg>
-                    <span class="text-[17px]">Radio</span>
+                    <span class="text-[17px]">Albums</span>
+                </a>
+                <a href="" class="flex gap-[10px] items-center hoverBtn">
+                    <svg class="text-red-600" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 18V5l12-2v13"></path>
+                        <circle cx="6" cy="18" r="3"></circle>
+                        <circle cx="18" cy="16" r="3"></circle>
+                    </svg>
+                    <span class="text-[17px]">Songs</span>
+                </a>
+                <a href="" class="flex gap-[10px] items-center hoverBtn">
+                    <svg class="text-red-600" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                        <circle cx="12" cy="10" r="3"></circle>
+                        <path d="M6 18c0-2.5 3-4 6-4s6 1.5 6 4"></path>
+                    </svg>
+                    <span class="text-[17px]">Made for you</span>
                 </a>
             </div>
-            <div class="max-w-[200px] w-full flex flex-col gap-[10px]">
-                <span class="text-[13px] text-gray-600">Library</span>
-                <div>
-                    <a href="" class="flex gap-[10px] items-center hoverBtn">
-                        <svg class="text-red-600" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polyline points="12 6 12 12 16 14"></polyline>
-                        </svg>
-                        <span class="text-[17px]">Recently added</span>
-                    </a>
-                    <a href="" class="flex gap-[10px] items-center hoverBtn">
-                        <svg class="text-red-600" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M14 5L19 10"></path>
-                            <path d="M15 4a2.5 2.5 0 0 1 3.5 3.5L11 15l-4 1 1-4 7.5-7.5z"></path>
-                        </svg>
-                        <span class="text-[17px]">Artists</span>
-                    </a>
-                    <a href="" class="flex gap-[10px] items-center hoverBtn">
-                        <svg class="text-red-600" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="3" width="18" height="18" rx="2"></rect>
-                            <circle cx="12" cy="12" r="3"></circle>
-                        </svg>
-                        <span class="text-[17px]">Albums</span>
-                    </a>
-                    <a href="" class="flex gap-[10px] items-center hoverBtn">
-                        <svg class="text-red-600" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M9 18V5l12-2v13"></path>
-                            <circle cx="6" cy="18" r="3"></circle>
-                            <circle cx="18" cy="16" r="3"></circle>
-                        </svg>
-                        <span class="text-[17px]">Songs</span>
-                    </a>
-                    <a href="" class="flex gap-[10px] items-center hoverBtn">
-                        <svg class="text-red-600" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="3" width="18" height="18" rx="2"></rect>
-                            <circle cx="12" cy="10" r="3"></circle>
-                            <path d="M6 18c0-2.5 3-4 6-4s6 1.5 6 4"></path>
-                        </svg>
-                        <span class="text-[17px]">Made for you</span>
-                    </a>
-                </div>
-            </div>
-            <div class="max-w-[200px] w-full flex flex-col gap-[10px]">
-                <span class="text-[13px] text-gray-600">Playlists</span>
-                <div>
-                    <a href="" class="flex gap-[10px] items-center hoverBtn">
-                        <svg class="text-red-600" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="3" width="4" height="4"></rect>
-                            <rect x="10" y="3" width="4" height="4"></rect>
-                            <rect x="17" y="3" width="4" height="4"></rect>
-                            <rect x="3" y="10" width="4" height="4"></rect>
-                            <rect x="10" y="10" width="4" height="4"></rect>
-                            <rect x="17" y="10" width="4" height="4"></rect>
-                            <rect x="3" y="17" width="4" height="4"></rect>
-                            <rect x="10" y="17" width="4" height="4"></rect>
-                            <rect x="17" y="17" width="4" height="4"></rect>
-                        </svg>
-                        <span class="text-[17px]">All Playlists</span>
-                    </a>
-                    <a href="" class="flex gap-[10px] items-center hoverBtn">
-                        <svg class="text-red-600" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="3" width="18" height="18" rx="2"></rect>
-                            <polygon
+        </div>
+        <div class="max-w-[200px] w-full flex flex-col gap-[10px]">
+            <span class="text-[13px] text-gray-600">Playlists</span>
+            <div>
+                <a href="" class="flex gap-[10px] items-center hoverBtn">
+                    <svg class="text-red-600" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="4" height="4"></rect>
+                        <rect x="10" y="3" width="4" height="4"></rect>
+                        <rect x="17" y="3" width="4" height="4"></rect>
+                        <rect x="3" y="10" width="4" height="4"></rect>
+                        <rect x="10" y="10" width="4" height="4"></rect>
+                        <rect x="17" y="10" width="4" height="4"></rect>
+                        <rect x="3" y="17" width="4" height="4"></rect>
+                        <rect x="10" y="17" width="4" height="4"></rect>
+                        <rect x="17" y="17" width="4" height="4"></rect>
+                    </svg>
+                    <span class="text-[17px]">All Playlists</span>
+                </a>
+                <a href="./Playlists/favouriteSongs.html" class="flex gap-[10px] items-center hoverBtn">
+                    <svg class="text-red-600" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                        <polygon
                                 points="12 8 13.09 11.26 16.5 11.27 13.97 13.14 15 16.5 12 14.77 9 16.5 10.03 13.14 7.5 11.27 10.91 11.26 12 8">
-                            </polygon>
-                        </svg>
+                        </polygon>
+                    </svg>
 
-                        <span class="text-[17px]">Favourite songs</span>
-                    </a>
-                </div>
+                    <span class="text-[17px]">Favourite songs</span>
+                </a>
             </div>
         </div>
+    </div>
 
-        <div class="border-t-[1px] border-solid border-gray-400 h-[60px] w-full flex items-center fontLight">
-            <div class="flex gap-[8px] items-center ml-[10px] w-full">
-                <img class="max-w-[30px]" src="./src/icons/kindpng_2074624.png" alt="avatar">
-                <span>Name Surname</span>
-            </div>
+    <div class="border-t-[1px] border-solid border-gray-400 h-[60px] w-full flex items-center fontLight">
+        <div class="flex gap-[8px] items-center ml-[10px] w-full">
+            <img class="max-w-[30px]" src="./src/icons/kindpng_2074624.png" alt="avatar">
+            <span id="regBtn">Name Surname</span>
         </div>
-    </aside>
-    <div class="flex flex-col flex-1">
-    <header class="h-[65px] border-b-[1px] border-solid border-gray-400 w-full">
-        <nav class="flex w-full h-full justify-evenly px-[30px] gap-[20px] items-center">
+    </div>
+</aside>
+<div class="flex flex-col flex-1 relative items-center">
+    <div class="block absolute top-3 right-6 sm:hidden"><img id="burgerMenu" class="w-[40px]" src="./src/icons/9301702_burgermenu_menu_navigation_icon.png" alt=""></div>
+    <header class="h-[65px] border-[1px] bg-colorBack2 rounded-3xl sm:rounded-none sm:bg-transparent sm:border-0 sm:border-b-[1px] border-solid absolute sm:static bottom-3 sm:top-0 max-w-[90%] sm:max-w-full w-full">
+        <nav class="flex w-full h-full justify-evenly px-[15px] md:px-[30px] gap-[10px] md:gap-[20px] items-center">
             <div class="flex gap-[10px] items-center">
-                <div>
+                <button id="playRandom">
                     <svg class="text-gray-400" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="16 3 21 3 21 8"></polyline>
                         <line x1="4" y1="20" x2="21" y2="3"></line>
                         <polyline points="21 16 21 21 16 21"></polyline>
                         <line x1="15" y1="15" x2="21" y2="21"></line>
                     </svg>
-                </div>
-                <div>
+                </button>
+                <button id="previousButton">
                     <svg class="text-gray-400" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <polygon points="19 20 9 12 19 4 19 20"></polygon>
                         <line x1="5" y1="4" x2="5" y2="20"></line>
                     </svg>
 
-                </div>
-                <div><svg class="text-gray-400" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                </button>
+                <button id="buttonHeaderPlay">
+                    <svg class="text-gray-400" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                    </svg></div>
-                <div><svg class="text-gray-400" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="6" y="4" width="4" height="16" rx="1.5"></rect>
-                        <rect x="14" y="4" width="4" height="16" rx="1.5"></rect>
                     </svg>
-                </div>
-                <div><svg class="text-gray-400" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polygon points="5 4 15 12 5 20 5 4"></polygon>
-                        <line x1="19" y1="4" x2="19" y2="20"></line>
-                    </svg>
-                </div>
-                <div><svg class="text-gray-400" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="17 1 21 5 17 9"></polyline>
-                        <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
-                        <polyline points="7 23 3 19 7 15"></polyline>
-                        <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
-                    </svg>
-                </div>
+                </button>
+
+                <button id="nextButton"><svg class="text-gray-400" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="5 4 15 12 5 20 5 4"></polygon>
+                    <line x1="19" y1="4" x2="19" y2="20"></line>
+                </svg>
+                </button>
+                <button><svg class="text-gray-400" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="17 1 21 5 17 9"></polyline>
+                    <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                    <polyline points="7 23 3 19 7 15"></polyline>
+                    <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                </svg>
+                </button>
             </div>
-            <div class="flex max-w-[500px] flex-1">
-                <div class="min-w-[44px] h-[44px] bg-gray-300">
-                </div>
-                <div class="flex flex-col max-w-[450px] w-full items-center justify-center gap-[3px] bg-gray-100">
-                    <span class="text-[16px]">Song Name</span>
-                    <span class="text-[14px] fontLight">Artist</span>
+            <div class="flex max-w-fit sm:max-w-[500px] sm:min-w-[140px] flex-1">
+                <img src="" class="min-w-[44px] h-[44px] bg-gray-300 imgHeader" alt="">
+                <div class="sm:flex hidden flex-col max-w-[450px] w-full bg-gray-100">
+                    <div class="flex flex-1 flex-col justify-center items-center gap-[3px]">
+                        <span class="text-[16px] track">Song Name</span>
+                        <span class="text-[14px] fontLight author">Artist</span>
+                    </div>
+                    <div class="progressContainer w-full h-[3px] bg-gray-300">
+                        <div id="timeTrack" class="h-full w-0 bg-red-500"></div>
+                    </div>
                 </div>
             </div>
             <div class="flex gap-[10px] items-center justify-center">
                 <img class="w-[25px]" src="./src/icons/wondicon-ui-free-speaker_111240.svg" alt="Volume">
-                <input class="bg-transparent max-w-[70px] range" type="range" min="0" max="100" value="50"
-                    class="slider">
+                <input class="bg-transparent max-w-[70px] range" id="range" type="range" min="0" max="100" value="50"
+                       class="slider">
             </div>
         </nav>
     </header>
-    <main class="flex flex-col py-[10px] px-[30px] gap-[20px] justify-center items-center">
-        <div class="self-end h-[20px] flex justify-center items-center bg-gray-200 max-w-[210px] w-full gap-[15px] py-[2px] rounded-md">
-            <button class="mainToggle px-[10px] py-[1px] rounded-sm gray">Apple Music</button>
-            <button class="mainToggle px-[10px] py-[1px] rounded-sm">Your Library</button>
-            
-        </div>
-            <span class="text-[18px] self-start">Browse Categories</span>
-        <div class="grid grid-cols-5 gap-[30px] w-full max-w-[1600px] h-[900px] overflow-y-scroll">
-            <div class="max-w-[300px] w-full max-h-[160px] h-full bg-gray-400"></div>
-            <div class="max-w-[300px] w-full h-full min-h-[130px] max-h-[160px] bg-gray-400"></div>
-            <div class="max-w-[300px] w-full h-full min-h-[130px] max-h-[160px] bg-gray-400"></div>
-            <div class="max-w-[300px] w-full h-full min-h-[130px] max-h-[160px] bg-gray-400"></div>
-            <div class="max-w-[300px] w-full h-full min-h-[130px] max-h-[160px] bg-gray-400"></div>
-            <div class="max-w-[300px] w-full h-full min-h-[130px] max-h-[160px] bg-gray-400"></div>
-            <div class="max-w-[300px] w-full h-full min-h-[130px] max-h-[160px] bg-gray-400"></div>
-            <div class="max-w-[300px] w-full h-full min-h-[130px] max-h-[160px] bg-gray-400"></div>
-            <div class="max-w-[300px] w-full h-full min-h-[130px] max-h-[160px] bg-gray-400"></div>
-            <div class="max-w-[300px] w-full h-full min-h-[130px] max-h-[160px] bg-gray-400"></div>
-            <div class="max-w-[300px] w-full h-full min-h-[130px] max-h-[160px] bg-gray-400"></div>
-            <div class="max-w-[300px] w-full h-full min-h-[130px] max-h-[160px] bg-gray-400"></div>
-            <div class="max-w-[300px] w-full h-full min-h-[130px] max-h-[160px] bg-gray-400"></div>
-            <div class="max-w-[300px] w-full h-full min-h-[130px] max-h-[160px] bg-gray-400"></div>
-            <div class="max-w-[300px] w-full h-full min-h-[130px] max-h-[160px] bg-gray-400"></div>
-            <div class="max-w-[300px] w-full h-full min-h-[130px] max-h-[160px] bg-gray-400"></div>
-            <div class="max-w-[300px] w-full h-full min-h-[130px] max-h-[160px] bg-gray-400"></div>
-            <div class="max-w-[300px] w-full h-full min-h-[130px] max-h-[160px] bg-gray-400"></div>
-            <div class="max-w-[300px] w-full h-full min-h-[130px] max-h-[160px] bg-gray-400"></div>
-            <div class="max-w-[300px] w-full h-full min-h-[130px] max-h-[160px] bg-gray-400"></div>
-            <div class="max-w-[300px] w-full h-full min-h-[130px] max-h-[160px] bg-gray-400"></div>
-            <div class="max-w-[300px] w-full h-full min-h-[130px] max-h-[160px] bg-gray-400"></div>
-            <div class="max-w-[300px] w-full h-full min-h-[130px] max-h-[160px] bg-gray-400"></div>
-            <div class="max-w-[300px] w-full h-full min-h-[130px] max-h-[160px] bg-gray-400"></div>
-            <div class="max-w-[300px] w-full h-full min-h-[130px] max-h-[160px] bg-gray-400"></div>
-            <div class="max-w-[300px] w-full h-full min-h-[130px] max-h-[160px] bg-gray-400"></div>
-            <div class="max-w-[300px] w-full h-full min-h-[130px] max-h-[160px] bg-gray-400"></div>
-        </div>
+    <main
+            class="flex flex-col justify-start items-center max-h-screen sm:max-h-[calc(100vh-65px)] w-full">
+            <div class="bg-[#F3233A] w-full h-screen flex flex-col justify-center items-center gap-[30px]">
+                <img class="max-w-[200px]" src="./src/icons/Apple Music Logo (PNG720p) - Vector69Com.png"
+                     alt="logo">
+                <div class="text-[36px] sm:text-[64px] font-[600] text-[#FFF] max-w-[400px] text-center">
+                    Discover new music <br> every day
+            </div>
+            </div>
+
     </main>
+</div>
+<div id="regOverlay"
+     class="hidden fixed top-0 left-0 right-0 bottom-0 flex-col items-center justify-center bg-[#BBBBBB8E] z-[9999]">
+    <div class="bg-white rounded-3xl overflow-hidden shadow-xl p-10 w-full max-w-[285px] flex flex-col gap-[24px]">
+        <h1 class="text-3xl md:text-4xl font-bold text-red-500 text-center">Create Account</h1>
+
+        <div class="flex flex-col gap-4">
+            <input id="firstname" type="text" placeholder="First Name"
+                   class="px-[16px] py-[12px] rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-400 text-lg">
+            <input id="lastname" type="text" placeholder="Last Name"
+                   class="px-[16px] py-[12px] rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-400 text-lg">
+            <input id="email" type="email" placeholder="Email"
+                   class="px-[16px] py-[12px] rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-400 text-lg">
+            <input id="password" type="password" placeholder="Password"
+                   class="px-[16px] py-[12px] rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-400 text-lg">
+        </div>
+
+        <button id="signUp"
+                class="bg-gradient-to-r from-red-500 to-red-700 hover:from-red-600 hover:to-red-800 text-white font-semibold py-3 rounded-xl text-lg transition-colors">
+            Sign Up
+        </button>
+
+        <p class="text-center text-gray-500 text-sm md:text-base">
+            Already have an account?
+            <a href="#" class="text-red-500 font-[10px] hover:underline">Log in</a>
+        </p>
     </div>
-    
+</div>
+<script>
+    const aside = document.getElementById('aside');
+    const burger = document.getElementById('burgerMenu');
+    let clicked = false;
+    burger.addEventListener('click', (e) => {
+        clicked = !clicked;
+        if (!clicked){
+                aside.classList.add('flex');
+                aside.classList.add('activeAside')
+                aside.classList.remove('hidden');
+        }else{
+            aside.classList.add('hidden');
+            aside.classList.remove('activeAside')
+            aside.classList.remove('flex');
+        }
+    })
 
-    <footer>
-
-    </footer>
-    <script src="script.js"></script>
+</script>
 </body>
+
 
 </html>

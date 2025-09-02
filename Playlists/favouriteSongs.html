@@ -5,18 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apple Music</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../dist/output.css">
 
 </head>
 
-<body>
+<body class="min-w-[370px]">
 
 <aside
-        class="flex flex-col flex-shrink-0 items-center h-screen border-r-[1px] border-solid border-gray-400 w-[259px] z-[1]">
+        id="aside"
+        class="sm:flex flex-col items-center h-screen hidden border-r-[1px] border-solid border-gray-400 max-w-[240px] md:max-w-[259px] w-full z-[11000] bg-white">
     <div class="flex flex-col gap-[20px] w-full items-center flex-grow">
         <div class="pt-[17px] pl-[32px] h-[55px] w-full">
-            <a href="#">
+            <a href="../index.html">
                 <img class="max-w-[100px]" src="../src/icons/Apple Music Logo (PNG720p) - Vector69Com.png"
                      alt="logo">
             </a>
@@ -31,7 +32,7 @@
             </div>
         </div>
         <div class="max-w-[200px] w-full flex flex-col">
-            <a href="../Home/Home.html" class="flex gap-[10px] items-center hoverBtn bg-gray-200">
+            <a href="../Home/Home.html" class="flex gap-[10px] items-center hoverBtn ">
                 <svg class="text-red-600" width="24" height="24" viewBox="0 0 24 24" fill="none"
                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M3 9L12 2L21 9V20a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"></path>
@@ -124,7 +125,7 @@
                     </svg>
                     <span class="text-[17px]">All Playlists</span>
                 </a>
-                <a href="" class="flex gap-[10px] items-center hoverBtn">
+                <a href="../Playlists/favouriteSongs.html" class="flex gap-[10px] items-center hoverBtn">
                     <svg class="text-red-600" width="24" height="24" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="3" y="3" width="18" height="18" rx="2"></rect>
@@ -146,9 +147,10 @@
         </div>
     </div>
 </aside>
-<div class="flex flex-col flex-1">
-    <header class="h-[65px] border-b-[1px] border-solid border-gray-400 w-full">
-        <nav class="flex w-full h-full justify-evenly px-[30px] gap-[20px] items-center">
+<div class="flex flex-col flex-1 relative items-center">
+    <div class="block absolute top-3 right-6 sm:hidden"><img id="burgerMenu" class="w-[40px]" src="../src/icons/9301702_burgermenu_menu_navigation_icon.png" alt=""></div>
+    <header class="h-[65px] border-[1px] bg-colorBack2 rounded-3xl sm:rounded-none sm:bg-transparent sm:border-0 sm:border-b-[1px] border-solid absolute sm:static bottom-3 sm:top-0 max-w-[90%] sm:max-w-full w-full">
+        <nav class="flex w-full h-full justify-evenly px-[15px] md:px-[30px] gap-[10px] md:gap-[20px] items-center">
             <div class="flex gap-[10px] items-center">
                 <button id="playRandom">
                     <svg class="text-gray-400" width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -189,9 +191,9 @@
                 </svg>
                 </button>
             </div>
-            <div class="flex max-w-[500px] flex-1">
+            <div class="flex max-w-fit sm:max-w-[500px] sm:min-w-[140px] flex-1">
                 <img src="" class="min-w-[44px] h-[44px] bg-gray-300 imgHeader" alt="">
-                <div class="flex flex-col max-w-[450px] w-full bg-gray-100">
+                <div class="sm:flex hidden flex-col max-w-[450px] w-full bg-gray-100">
                     <div class="flex flex-1 flex-col justify-center items-center gap-[3px]">
                         <span class="text-[16px] track">Song Name</span>
                         <span class="text-[14px] fontLight author">Artist</span>
@@ -208,15 +210,14 @@
             </div>
         </nav>
     </header>
-    <main class="flex flex-col gap-[30px] justify-start items-center max-h-[calc(100vh-65px)] overflow-y-scroll">
+    <main
+            class="flex flex-col justify-start items-center max-h-screen sm:max-h-[calc(100vh-65px)] w-full overflow-y-scroll">
 
         <div class="flex flex-col gap-[30px] justify-start items-center p-[40px] w-full">
-            <div id="album" class="flex w-full h-[270px] gap-[30px]">
+            <div id="album" class="flex flex-col xs:flex-row items-center justify-center xs:items-end w-full xs:h-[270px] gap-[30px]">
                 <img class="imageAlbum" src="../src/Screenshot%202025-09-01%20163823.png" alt="">
-                <div class="flex flex-col justify-end gap-[60px] h-full flex-1 max-h-[80%] self-end">
-                    <div class="flex flex-col gap-[10px]">
+                <div class="flex flex-col items-center xs:items-start justify-end gap-[30px] xs:gap-[60px] h-full flex-1 max-h-[80%] xs:self-end">
                         <h1 class="text-[32px]">Favourite songs</h1>
-                    </div>
                     <button id="playRandPlaylist"
                             class="text-center max-w-[130px] w-full text-[16px] text-white bg-red-700 rounded-lg font-[500] p-[.5em]">
                         Shuffle
@@ -274,7 +275,24 @@
 <script src="../js/header.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/favouriteCreate.js"></script>
+<script>
+    const aside = document.getElementById('aside');
+    const burger = document.getElementById('burgerMenu');
+    let clicked = false;
+    burger.addEventListener('click', (e) => {
+        clicked = !clicked;
+        if (!clicked){
+            aside.classList.add('flex');
+            aside.classList.add('activeAside')
+            aside.classList.remove('hidden');
+        }else{
+            aside.classList.add('hidden');
+            aside.classList.remove('activeAside')
+            aside.classList.remove('flex');
+        }
+    })
 
+</script>
 
 </body>
 

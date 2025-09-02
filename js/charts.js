@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 function scrollContainer(container, dir) {
     const card = container.querySelector('.card, .cardArtists');
-    const distance = card ? card.offsetWidth + 16 : 320;
+    const distance = card ? card.offsetWidth + 20 : 320;
     container.scrollBy({ left: dir === 'left' ? -distance : distance, behavior: 'smooth' });
 }
 

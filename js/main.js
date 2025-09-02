@@ -79,7 +79,7 @@ document.addEventListener('click', (e) => {
         const buttonAlbum = e.target;
         let cover
         if (trackElement.classList.contains('allTrackList')) {
-        cover = trackElement.querySelector('.coverAlbum').src
+            cover = trackElement.querySelector('.coverAlbum').src
         }
         let artistPlaylist
         if(trackElement.classList.contains('trackPlaylist')) {
@@ -144,37 +144,38 @@ document.addEventListener('click', (e) => {
             audio: track?.querySelector('audio')?.src || trackA?.querySelector('audio')?.src,
             cover: track?.querySelector('.coverAlbum')?.src || trackA?.querySelector('.cover')?.src || albumData?.cover ,
             albumName: albumData?.albumName || trackA?.querySelector('.albumName') || null,
-            artistName: track?.querySelector('.artistName')?.innerText || albumData?.artistName || artistArt || artist,
+            artistName: track?.querySelector('.artistName')?.innerText || (typeof artistArt !== 'undefined' && artistArt ? artistArt : null) || albumData?.artistName || artist,
         }
         const exist = favouriteSongs.some(song => song.title === trackData.title);
-    if (!exist) {
-        favouriteSongs.push(trackData)
-        console.log('pushed')
-        console.log(favouriteSongs)
-        favBtn.src = '../src/icons/favouriteFilled.svg'
-    }else{
-        const index = favouriteSongs.findIndex(song => song.title === trackData.title);
-        favouriteSongs.splice(index, 1)
-        favBtn.src = '../src/icons/favourite.svg'
-        console.log('deleted')
-        console.log(favouriteSongs)
-        location.reload();
-    }
+        if (!exist) {
+            favouriteSongs.push(trackData)
+            console.log('pushed')
+            console.log(favouriteSongs)
+            favBtn.src = '../src/icons/favouriteFilled.svg'
+        }else{
+            const index = favouriteSongs.findIndex(song => song.title === trackData.title);
+            favouriteSongs.splice(index, 1)
+            favBtn.src = '../src/icons/favourite.svg'
+            console.log('deleted')
+            console.log(favouriteSongs)
+            location.reload();
+        }
     }
     localStorage.setItem('favouriteList', JSON.stringify(favouriteSongs));
 });
 
 function updateIcons(){
-        document.querySelectorAll('.addToFavourite').forEach(favBtn => {
-            const track = favBtn.closest('.trackAlbum');
-            const trackA = favBtn.closest('.trackArtist');
-            const title = track?.querySelector('h4')?.innerText || trackA?.querySelector('.title')?.innerText;
-            const exist = favouriteSongs.some(song => song.title === title);
-            if (exist) {
-                favBtn.src = '../src/icons/favouriteFilled.svg';
-            }
-        });
+    document.querySelectorAll('.addToFavourite').forEach(favBtn => {
+        const track = favBtn.closest('.trackAlbum');
+        const trackA = favBtn.closest('.trackArtist');
+        const title = track?.querySelector('h4')?.innerText || trackA?.querySelector('.title')?.innerText;
+        const exist = favouriteSongs.some(song => song.title === title);
+        if (exist) {
+            favBtn.src = '../src/icons/favouriteFilled.svg';
+        }
+    });
 
 }
+
 
 //https://cors-anywhere.herokuapp.com/corsdemo

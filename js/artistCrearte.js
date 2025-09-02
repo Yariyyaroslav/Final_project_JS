@@ -22,7 +22,8 @@ allTracksButton.addEventListener('click', () => {
 artistsScroll.querySelectorAll('.scroll-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         const dir = btn.dataset.dir;
-        const distance = 320;
+        const card = artistsContainer.querySelector('.cardArtists');
+        const distance = card ? card.offsetWidth + 20 : 320;
         scrollContainerArtist(artistsContainer, dir, distance)
     })
 })
@@ -31,7 +32,17 @@ artistsScroll.querySelectorAll('.scroll-btn').forEach(btn => {
 songsScroll.querySelectorAll('.scroll-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         const dir = btn.dataset.dir;
-        const distance = 1185;
+        let distance;
+        if (window.innerWidth >= 1480) {
+            distance = 1115
+        } else if (window.innerWidth >= 1152) {
+            distance = 747
+        } else if (window.innerWidth >= 736) {
+            distance = 380
+        }else{
+            distance = 320
+        }
+
         scrollContainerArtist(artistScroll, dir, distance)
     })
 })
@@ -39,7 +50,8 @@ songsScroll.querySelectorAll('.scroll-btn').forEach(btn => {
 albumsScroll.querySelectorAll('.scroll-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         const dir = btn.dataset.dir;
-        const distance = 320;
+        const card = albumsScroll.querySelector('.album');
+        const distance = card ? card.offsetWidth + 20 : 320;
         scrollContainerArtist(albumContainer, dir, distance)
     })
 })
@@ -52,6 +64,7 @@ function scrollContainerArtist(container, dir, distance) {
 async function artistInfo({artistName, cover, id}) {
     const songUrl = `https://api.deezer.com/artist/${id}/top?limit=50`
     artistArt = artistName
+    console.log(artistArt)
     artistNameMain.innerText = artistName;
     artistImg.src = cover;
     const artistTracks = await sendRequest("GET", proxyUrl+songUrl);
@@ -64,7 +77,7 @@ async function albumsInfo({artistName, cover, id}){
     const albums = await sendRequest("GET", proxyUrl+albumUrl);
     albumList = albums.data;
     albumContainer.innerHTML = albumList.map(album =>
-        `<div class="album flex flex-col bg-colorArtistBack justify-between flex-shrink-0 w-[300px] rounded-lg overflow-hidden relative"
+        `<div class="album card flex flex-col bg-colorArtistBack justify-between flex-shrink-0 w-[300px] rounded-lg overflow-hidden relative"
             data-artist="${artistArt}"
             data-title="${album.title}"
             data-trackList="${album.tracklist}"
@@ -72,7 +85,7 @@ async function albumsInfo({artistName, cover, id}){
             <div class="overlay"></div>
             <button class="openBtn">▶</button>
             <img class="w-full object-cover" src="${album.cover_big}" alt="Cover">
-            <div class="p-[12px] flex flex-col gap-[3px]">
+            <div class="flex flex-col gap-[3px]">
                 <p class="title line-clamp-1">${album.title}</p>
                 <p class="author text-gray-400 line-clamp-1">${album.release_date}</p>
             </div>
@@ -99,36 +112,45 @@ async function getSameArtists({artistName, cover, id}) {
 }
 
 
-
-function songChunk(data){
-    for(let i = 0; i < 27; i += 9){
-        const chunk = data.slice(i, i+9);
+function songChunk(data) {
+    let chunkSize;
+    if (window.innerWidth >= 1480) {
+        chunkSize = 9;
+    } else if (window.innerWidth >= 1152) {
+        chunkSize = 6;
+    } else {
+        chunkSize = 3;
+    }
+    for (let i = 0; i < data.length; i += chunkSize) {
+        const chunk = data.slice(i, i + chunkSize);
         const grid = document.createElement('div');
-        grid.className = 'gridSongs w-[1165px] grid grid-cols-3 gap-4 shrink-0';
-        grid.innerHTML = chunk.map(song =>
-            `
-                <div class="trackArtist flex gap-[10px] w-[360px] py-[10px] px-[10px] rounded-lg justify-between items-center bg-colorArtistBack relative">
-                    <div class="flex gap-[10px] justify-center items-center">
+        grid.className = `gridSongs shrink-0 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4`;
+        grid.innerHTML = chunk.map(song => `
+            <div class="trackArtist flex gap-[10px] w-[300px] sm:w-[360px] py-[10px] px-[10px] rounded-lg justify-between items-center bg-colorArtistBack relative">
+                <div class="flex gap-[10px] justify-center items-center">
                     <audio src="${song.preview}"></audio>
                     <div class="overlayArtist"></div>
-                        <div class="relative">
+                    <div class="relative">
                         <div class="playButtonTrackArtist">▶</div>
                         <img class="max-w-[40px] rounded-lg cover" src="${song.album.cover_medium}" alt="songImg">
-                        </div>
-                        <div class="flex flex-col gap-[3px]">
-                            <span class="text-[13px] font-[500] title">${song.title}</span>
-                            <span class="text-[12px] font-[400] albumName">${song.album.title}</span>
-                        </div>
                     </div>
-                    <img class="addToFavourite" src="../src/icons/favourite.svg" alt="favourite">
-                </div>`).join('');
+                    <div class="flex flex-col gap-[3px]">
+                        <span class="text-[13px] font-[500] title">${song.title}</span>
+                        <span class="text-[12px] font-[400] albumName">${song.album.title}</span>
+                    </div>
+                </div>
+                <img class="addToFavourite" src="../src/icons/favourite.svg" alt="favourite">
+            </div>
+        `).join('');
+
         artistScroll.appendChild(grid);
     }
-    updateIcons()
+    updateIcons();
 }
-
-
-
+window.addEventListener('resize', () => {
+    artistScroll.innerHTML = '';
+    songChunk(artistTrackList);
+});
 document.addEventListener('click', (e)=>{
     if (e.target.classList.contains('playButtonTrackArtist')){
         const currentTrack = e.target.closest('.trackArtist');
