@@ -444,6 +444,7 @@ header{
     z-index: 10000;
 }
 
-.track, .author{
+
+.headerMusic>.track,.author{
     @apply line-clamp-1;
 }
