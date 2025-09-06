@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="834ad246-8808-4543-84cc-ba751e2fbb7a" name="Changes" comment="fix" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Yariyyaroslav&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Yariyyaroslav/Final_project_JS.git&quot;,
+    &quot;accountId&quot;: &quot;47796d89-4cba-4f19-852f-bc685f1b9b96&quot;
+  }
+}</component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="30ZUyqEaUwB1rsvrXW3na3apBOF" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/IT/JS/FinalJs/src/icons&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2025.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IT\JS\FinalJs\src\icons" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IT\JS\FinalJs\styles" />
+      <recent name="D:\IT\JS\FinalJs" />
+      <recent name="D:\IT\JS\FinalJs\src" />
+      <recent name="D:\IT\JS\FinalJs\dist" />
+      <recent name="D:\IT\JS\FinalJs\js" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-WS-251.23774.424" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="834ad246-8808-4543-84cc-ba751e2fbb7a" name="Changes" comment="" />
+      <created>1753834845824</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1753834845824</updated>
+      <workItem from="1753834847036" duration="6323000" />
+      <workItem from="1753841252916" duration="5000" />
+      <workItem from="1754093708028" duration="289000" />
+      <workItem from="1754233052672" duration="12000" />
+      <workItem from="1755042860070" duration="21000" />
+      <workItem from="1755097359709" duration="1736000" />
+      <workItem from="1755208621832" duration="15027000" />
+      <workItem from="1755264425117" duration="432000" />
+      <workItem from="1755468002268" duration="2597000" />
+      <workItem from="1755470698565" duration="814000" />
+      <workItem from="1755635817984" duration="14103000" />
+      <workItem from="1755700866565" duration="9000" />
+      <workItem from="1755702484364" duration="2890000" />
+      <workItem from="1755728613739" duration="7877000" />
+      <workItem from="1755957860936" duration="120000" />
+      <workItem from="1755984444231" duration="11658000" />
+      <workItem from="1755996452083" duration="8000" />
+      <workItem from="1756022963623" duration="1362000" />
+      <workItem from="1756161677403" duration="12468000" />
+      <workItem from="1756216052242" duration="1284000" />
+      <workItem from="1756228294017" duration="20458000" />
+      <workItem from="1756271795482" duration="564000" />
+      <workItem from="1756272469855" duration="47000" />
+      <workItem from="1756300416090" duration="28000" />
+      <workItem from="1756308730212" duration="2415000" />
+      <workItem from="1756628521345" duration="865000" />
+      <workItem from="1756672816636" duration="11585000" />
+      <workItem from="1756706735911" duration="565000" />
+      <workItem from="1756732575710" duration="10318000" />
+      <workItem from="1756757042167" duration="8235000" />
+      <workItem from="1756765722079" duration="114000" />
+      <workItem from="1756766357954" duration="3330000" />
+      <workItem from="1756802963477" duration="598000" />
+      <workItem from="1756813562590" duration="1454000" />
+      <workItem from="1756817188087" duration="15397000" />
+      <workItem from="1756846577212" duration="140000" />
+      <workItem from="1756909678957" duration="173000" />
+      <workItem from="1756911115197" duration="5049000" />
+      <workItem from="1756971669267" duration="32000" />
+      <workItem from="1757120322997" duration="319000" />
+      <workItem from="1757171585392" duration="2790000" />
+      <workItem from="1757175748158" duration="1363000" />
+    </task>
+    <task id="LOCAL-00001" summary="first">
+      <option name="closed" value="true" />
+      <created>1755732766679</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1755732766679</updated>
+    </task>
+    <task id="LOCAL-00002" summary="second">
+      <option name="closed" value="true" />
+      <created>1755736500793</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1755736500793</updated>
+    </task>
+    <task id="LOCAL-00003" summary="home">
+      <option name="closed" value="true" />
+      <created>1755736565167</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1755736565167</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add Album">
+      <option name="closed" value="true" />
+      <created>1755996123192</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1755996123192</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add artist">
+      <option name="closed" value="true" />
+      <created>1756174217987</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1756174217988</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Finished Artists and some bug fixes">
+      <option name="closed" value="true" />
+      <created>1756250281915</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1756250281915</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fixed search, added play when change the page, added footer and registration form">
+      <option name="closed" value="true" />
+      <created>1756687415694</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1756687415694</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fix">
+      <option name="closed" value="true" />
+      <created>1756743955351</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1756743955351</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fix">
+      <option name="closed" value="true" />
+      <created>1756759668171</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1756759668171</updated>
+    </task>
+    <task id="LOCAL-00010" summary="fix">
+      <option name="closed" value="true" />
+      <created>1756765824992</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1756765824992</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fix">
+      <option name="closed" value="true" />
+      <created>1756769594899</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1756769594899</updated>
+    </task>
+    <task id="LOCAL-00012" summary="END">
+      <option name="closed" value="true" />
+      <created>1756829919508</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1756829919508</updated>
+    </task>
+    <task id="LOCAL-00013" summary="fix">
+      <option name="closed" value="true" />
+      <created>1756971695863</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1756971695863</updated>
+    </task>
+    <task id="LOCAL-00014" summary="fix">
+      <option name="closed" value="true" />
+      <created>1757177448191</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1757177448191</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="f4d501dc-b171-4dc0-98eb-bdbfa819614f" value="TOOL_WINDOW" />
+        <entry key="3b656ea1-9d4c-4e09-9f16-238a48659bfc" value="TOOL_WINDOW" />
+        <entry key="9df2fd46-92fd-4b3f-a8e0-fefdf0fac93f" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="3b656ea1-9d4c-4e09-9f16-238a48659bfc">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="9df2fd46-92fd-4b3f-a8e0-fefdf0fac93f">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="f4d501dc-b171-4dc0-98eb-bdbfa819614f">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first" />
+    <MESSAGE value="second" />
+    <MESSAGE value="home" />
+    <MESSAGE value="Add Album" />
+    <MESSAGE value="Add artist" />
+    <MESSAGE value="Finished Artists and some bug fixes" />
+    <MESSAGE value="fixed search, added play when change the page, added footer and registration form" />
+    <MESSAGE value="END" />
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+  </component>
+</project>
