@@ -40,7 +40,7 @@ songsScroll.querySelectorAll('.scroll-btn').forEach(btn => {
         } else if (window.innerWidth >= 736) {
             distance = 380
         }else{
-            distance = 320
+            distance = 270
         }
 
         scrollContainerArtist(artistScroll, dir, distance)
@@ -126,7 +126,7 @@ function songChunk(data) {
         const grid = document.createElement('div');
         grid.className = `gridSongs shrink-0 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4`;
         grid.innerHTML = chunk.map(song => `
-            <div class="trackArtist flex gap-[10px] w-[300px] sm:w-[360px] py-[10px] px-[10px] rounded-lg justify-between items-center bg-colorArtistBack relative">
+            <div class="trackArtist flex gap-[10px] w-[250px] sm:w-[360px] py-[10px] px-[10px] rounded-lg justify-between items-center bg-colorArtistBack relative">
                 <div class="flex gap-[10px] justify-center items-center">
                     <audio src="${song.preview}"></audio>
                     <div class="overlayArtist"></div>
