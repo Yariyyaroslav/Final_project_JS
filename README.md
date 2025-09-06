@@ -26,7 +26,6 @@ A lightweight **Apple Music–style web app** that uses the **Deezer API** for c
 * **Frontend:** HTML, CSS (or Tailwind), JavaScript (Vanilla)
 * **API:** [Deezer Public API](https://developers.deezer.com/api)
 * **CORS proxy:** `https://cors-anywhere.herokuapp.com/`
-* **Hosting (optional):** GitHub Pages / any static host
 
 
 * [Deezer API](https://developers.deezer.com/api)
