@@ -926,6 +926,10 @@ video {
   width: 24px;
 }
 
+.w-\[250px\] {
+  width: 250px;
+}
+
 .w-\[25px\] {
   width: 25px;
 }
@@ -945,10 +949,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-\[250px\] {
-  width: 250px;
 }
 
 .min-w-\[370px\] {
@@ -987,10 +987,6 @@ video {
   max-width: 240px;
 }
 
-.max-w-\[261px\] {
-  max-width: 261px;
-}
-
 .max-w-\[285px\] {
   max-width: 285px;
 }
@@ -999,12 +995,16 @@ video {
   max-width: 30px;
 }
 
-.max-w-\[315px\] {
-  max-width: 315px;
+.max-w-\[310px\] {
+  max-width: 310px;
 }
 
-.max-w-\[360px\] {
-  max-width: 360px;
+.max-w-\[314px\] {
+  max-width: 314px;
+}
+
+.max-w-\[315px\] {
+  max-width: 315px;
 }
 
 .max-w-\[400px\] {
@@ -1030,14 +1030,6 @@ video {
 .max-w-fit {
   max-width: -moz-fit-content;
   max-width: fit-content;
-}
-
-.max-w-\[310px\] {
-  max-width: 310px;
-}
-
-.max-w-\[314px\] {
-  max-width: 314px;
 }
 
 .flex-1 {
@@ -3152,6 +3144,12 @@ body {
   text-align: center;
 }
 
+@media (min-width: 512px) {
+  .card {
+    max-width: 200px;
+  }
+}
+
 @media (min-width: 868px) {
   .card {
     max-width: 250px;
@@ -3174,6 +3172,12 @@ body {
   justify-content: center;
   gap: 10px;
   text-align: center;
+}
+
+@media (min-width: 512px) {
+  .cardArtists {
+    max-width: 200px;
+  }
 }
 
 @media (min-width: 868px) {

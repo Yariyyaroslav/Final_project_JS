@@ -159,12 +159,12 @@ body {
     background-color: rgb(204, 203, 203);
 }
 .card{
-    @apply bg-[#F5F5F5] flex flex-col gap-[10px] pb-[10px] max-w-[117px] md:max-w-[250px] 2xl:max-w-[300px] relative overflow-hidden rounded-[20px] flex-shrink-0 text-center w-full;
+    @apply bg-[#F5F5F5] flex flex-col gap-[10px] pb-[10px] max-w-[117px] xs:max-w-[200px] md:max-w-[250px] 2xl:max-w-[300px] relative overflow-hidden rounded-[20px] flex-shrink-0 text-center w-full;
 
 }
 
 .cardArtists{
-    @apply flex flex-col justify-center items-center max-w-[117px] md:max-w-[250px] 2xl:max-w-[300px] gap-[10px] flex-shrink-0 text-center w-full;
+    @apply flex flex-col justify-center items-center max-w-[117px] xs:max-w-[200px] md:max-w-[250px] 2xl:max-w-[300px] gap-[10px] flex-shrink-0 text-center w-full;
 }
 
 .imageArtist{

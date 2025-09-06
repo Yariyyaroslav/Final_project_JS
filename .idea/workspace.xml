@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="834ad246-8808-4543-84cc-ba751e2fbb7a" name="Changes" comment="fix" />
+    <list default="true" id="834ad246-8808-4543-84cc-ba751e2fbb7a" name="Changes" comment="fix">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/output.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/output.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/style.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,8 +70,8 @@
       <recent name="D:\IT\JS\FinalJs\src\icons" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\IT\JS\FinalJs\styles" />
       <recent name="D:\IT\JS\FinalJs" />
+      <recent name="D:\IT\JS\FinalJs\styles" />
       <recent name="D:\IT\JS\FinalJs\src" />
       <recent name="D:\IT\JS\FinalJs\dist" />
       <recent name="D:\IT\JS\FinalJs\js" />
@@ -127,7 +132,7 @@
       <workItem from="1756971669267" duration="32000" />
       <workItem from="1757120322997" duration="319000" />
       <workItem from="1757171585392" duration="2790000" />
-      <workItem from="1757175748158" duration="1363000" />
+      <workItem from="1757175748158" duration="1986000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <option name="closed" value="true" />
