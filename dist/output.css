@@ -902,6 +902,14 @@ video {
   height: 100vh;
 }
 
+.h-\[calc\(100\%-\)\] {
+  height: calc(100% - );
+}
+
+.h-\[calc\(100\%-118px\)\] {
+  height: calc(100% - 118px);
+}
+
 .max-h-\[250px\] {
   max-height: 250px;
 }
@@ -2329,6 +2337,11 @@ video {
 .py-\[40px\] {
   padding-top: 40px;
   padding-bottom: 40px;
+}
+
+.px-\[20px\] {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .pl-\[32px\] {
