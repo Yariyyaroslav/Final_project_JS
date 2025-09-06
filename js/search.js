@@ -1,13 +1,23 @@
 let search = document.getElementById('searchMain');
 let container_search_info = document.getElementById('searchInfo');
-
-search.addEventListener('input', async () => {
+function debounce(func, delay) {
+    let timeout;
+    return function(...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func(...args), delay);
+    };
+}
+search.addEventListener('input', debounce(handleSearch, 200))
+async function handleSearch(){
     const query = search.value;
     if (!query) {
         container_search_info.style.display = 'none';
         return;
     }
-
+    if (query.length < 2) {
+        container_search_info.style.display = 'none';
+        return;
+    }
     const tracksRes = await sendRequest('GET', proxyUrl + `https://api.deezer.com/search?q=${encodeURIComponent(query)}&limit=5`);
     const artistsRes = await sendRequest('GET', proxyUrl + `https://api.deezer.com/search/artist?q=${encodeURIComponent(query)}&limit=5`);
     let artists = artistsRes.data.filter(artist => artist.nb_fan >= 100);
@@ -16,7 +26,7 @@ search.addEventListener('input', async () => {
     createSearchResults(results);
     console.log("Filtered Artists:", artists);
     console.log("Tracks:", tracksRes);
-});
+}
 search.addEventListener('click', () => {
     if (search.value) {
         container_search_info.style.display = 'flex';
