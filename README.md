@@ -8,7 +8,7 @@ A lightweight **Apple Music–style web app** that uses the **Deezer API** for c
 >
 > [https://cors-anywhere.herokuapp.com/corsdemo](https://cors-anywhere.herokuapp.com/corsdemo)
 >
-> Access typically expires after a while; revisit the link to re-enable. For production, you should host your own proxy.
+> Access typically expires after a while; revisit the link to re-enable.
 
 ---
 
