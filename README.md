@@ -1,6 +1,6 @@
 # Apple Music Clone (Course Project)
-
-A lightweight **Apple Music–style web app** that uses the **Deezer API** for charts, search, albums, artists, and track previews.
+* [URL TO OPEN THE PROJECT](https://yariyyaroslav.github.io/Final_project_JS)
+> A lightweight **Apple Music–style web app** that uses the **Deezer API** for charts, search, albums, artists, and track previews.
 
 > **Important CORS note**
 >
